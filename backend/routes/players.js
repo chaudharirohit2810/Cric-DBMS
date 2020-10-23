@@ -17,12 +17,9 @@ router.get('/', (req, res) => {
 
 // Insert player
 router.post('/', (req, res) => {
-    const {first_name, last_name, age, career_start, player_role } = req.body
-    var query = "INSERT INTO Players VALUES (?, ?, ?, ?, ?)"
-    var values = ["Rohit", "Chaudhari", 20, new Date(), "All-Rounder"]
-    var date = new Date().toISOString().split('T')[0]
-    var query2 = `INSERT INTO Players (first_name, last_name, age, career_start, player_role) \
-        VALUES ("${first_name}", "${last_name}", ${age}, "${career_start}", "${player_role}")`
+    const {first_name, last_name, age, career_start, player_role, image_link } = req.body
+    var query2 = `INSERT INTO Players (first_name, last_name, age, career_start, player_role, image_link) \
+        VALUES ("${first_name}", "${last_name}", ${age}, "${career_start}", "${player_role}", "${image_link}")`
     query = mysql.format(query)
     db.query(query2, (err, result) => {
         if(err) {
