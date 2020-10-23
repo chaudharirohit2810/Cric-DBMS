@@ -1,0 +1,10 @@
+POST http://localhost:5000/players/
+Content-Type: application/json
+
+{
+    "first_name": "Chetas",
+    "last_name": "Borse",
+    "age": 20,
+    "career_start": "2010-01-01",
+    "player_role": "bowler"
+}
