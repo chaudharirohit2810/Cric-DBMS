@@ -1,0 +1,38 @@
+[
+    {
+        "team_name": "Chennai Super Kings",
+        "logo_link": "https://upload.wikimedia.org/wikipedia/en/thumb/2/2b/Chennai_Super_Kings_Logo.svg/250px-Chennai_Super_Kings_Logo.svg.png"
+    },
+    {
+        "team_name": "Mumbai Indians",
+        "logo_link": "https://upload.wikimedia.org/wikipedia/en/thumb/c/cd/Mumbai_Indians_Logo.svg/250px-Mumbai_Indians_Logo.svg.png"
+    },
+    {
+        "team_name": "Kolkata Knight Riders",
+        "logo_link": "https://upload.wikimedia.org/wikipedia/en/thumb/4/4c/Kolkata_Knight_Riders_Logo.svg/230px-Kolkata_Knight_Riders_Logo.svg.png"
+    },
+    {
+        "team_name": "Royal Challegers Bangalore",
+        "logo_link": "https://upload.wikimedia.org/wikipedia/en/thumb/2/2a/Royal_Challengers_Bangalore_2020.svg/250px-Royal_Challengers_Bangalore_2020.svg.png"
+    },
+    {
+        "team_name": "Rajasthan Royals",
+        "logo_link": "https://upload.wikimedia.org/wikipedia/en/thumb/6/60/Rajasthan_Royals_Logo.svg/250px-Rajasthan_Royals_Logo.svg.png"
+    },
+    {
+        "team_name": "Sunrisers Hyderabad",
+        "logo_link": "https://upload.wikimedia.org/wikipedia/en/thumb/8/81/Sunrisers_Hyderabad.svg/200px-Sunrisers_Hyderabad.svg.png"
+    },
+    {
+        "team_name": "Kings XI Punjab",
+        "logo_link": "https://upload.wikimedia.org/wikipedia/en/thumb/e/e7/Kings_XI_Punjab_logo.svg/230px-Kings_XI_Punjab_logo.svg.png"
+    },
+    {
+        "team_name": "Delhi Capitals",
+        "logo_link": "https://upload.wikimedia.org/wikipedia/en/thumb/f/f5/Delhi_Capitals_Logo.svg/250px-Delhi_Capitals_Logo.svg.png"
+    },
+    {
+        "team_name": "Deccan Chargers",
+        "logo_link": "https://upload.wikimedia.org/wikipedia/en/thumb/a/a6/HyderabadDeccanChargers.png/200px-HyderabadDeccanChargers.png"
+    }
+]

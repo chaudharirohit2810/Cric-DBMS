@@ -1,12 +1,9 @@
-DROP TABLE IF EXISTS Player_Stats;
-DROP TABLE IF EXISTS Players;
-DROP TABLE IF EXISTS Team_Rankings;
-DROP TABLE IF EXISTS Matches;
-DROP TABLE IF EXISTS League;
-DROP TABLE IF EXISTS Teams;
-DROP TABLE IF EXISTS League_Type;
+const { query } = require("express");
+const mysql = require("mysql");
+const config = require("./config");
+var db = mysql.createPool(config.mysql);
 
-CREATE TABLE Players
+var playersQuery = `CREATE TABLE IF NOT EXISTS Players
 (
     player_id int PRIMARY KEY AUTO_INCREMENT,
     first_name varchar(255) NOT NULL,
@@ -15,27 +12,26 @@ CREATE TABLE Players
     career_start DATE,
     player_role varchar(255),
     image_link varchar(255)
-);
+);`;
 
-
-CREATE TABLE Teams
+var teamsQuery = `
+CREATE TABLE IF NOT EXISTS Teams
 (
     team_id int PRIMARY KEY AUTO_INCREMENT,
     team_name varchar(255) NOT NULL,
     logo_link varchar(255)
 );
+`;
 
-
-CREATE TABLE League_Type
+var leagueTypeQuery = `CREATE TABLE IF NOT EXISTS League_Type
 (
     league_type_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     league_format varchar(255),
     league_name varchar(255),
     league_logo_link varchar(255)
-);
+);`;
 
-
-CREATE TABLE League
+var leagueQuery = `CREATE TABLE IF NOT EXISTS League
 (
     league_id INT PRIMARY KEY AUTO_INCREMENT,
     league_type_id INT,
@@ -48,9 +44,9 @@ CREATE TABLE League
     winner INT,
     FOREIGN KEY (league_type_id) REFERENCES League_Type(league_type_id) ON DELETE CASCADE,
     FOREIGN KEY (winner) REFERENCES Teams(team_id)
-);
+);`;
 
-CREATE TABLE Team_Rankings
+var teamsRankingQuery = `CREATE TABLE IF NOT EXISTS Team_Rankings
 (
     team_id INT,
     league_id INT,
@@ -59,9 +55,9 @@ CREATE TABLE Team_Rankings
     PRIMARY KEY(team_id, league_id),
     FOREIGN KEY (team_id) REFERENCES Teams(team_id),
     FOREIGN KEY (league_id) REFERENCES League(league_id)
-);
+);`;
 
-CREATE TABLE Matches
+var matchesQuery = `CREATE TABLE IF NOT EXISTS Matches
 (
     match_id INT PRIMARY KEY AUTO_INCREMENT,
     league_id INT,
@@ -74,9 +70,9 @@ CREATE TABLE Matches
     FOREIGN KEY (team1) REFERENCES Teams(team_id),
     FOREIGN KEY (team2) REFERENCES Teams(team_id),
     FOREIGN KEY (won_by) REFERENCES Teams(team_id) 
-);
+);`;
 
-CREATE TABLE Player_Stats
+var playerStatsQuery = `CREATE TABLE IF NOT EXISTS Player_Stats
 (
     player_id INT,
     league_id INT,
@@ -98,14 +94,41 @@ CREATE TABLE Player_Stats
     PRIMARY KEY(player_id, league_id),
     FOREIGN KEY (player_id) REFERENCES Players(player_id),
     FOREIGN KEY (league_id) REFERENCES League(league_id)
-);
+);`;
 
-
-CREATE TABLE IF NOT EXIST Plays
+var playsQuery = `CREATE TABLE IF NOT EXISTS Plays
 (
     team_id INT,
     player_id INT,
-    PRIMARY KEY(team_id, player_id)
-    FOREIGN KEY (team_id) REFERENCES Teams(team_id)
+    PRIMARY KEY(team_id, player_id),
+    FOREIGN KEY (team_id) REFERENCES Teams(team_id),
     FOREIGN KEY (player_id) REFERENCES Players(player_id)
-);
+);`;
+
+var queries = [
+    playersQuery,
+    teamsQuery,
+    leagueTypeQuery,
+    leagueQuery,
+    teamsRankingQuery,
+    matchesQuery,
+    playerStatsQuery,
+    playsQuery,
+];
+
+const createTable = async () => {
+    try {
+        queries.map((query) => {
+            db.query(query, (err, result) => {
+                if (err) {
+                    console.log(err.message);
+                }
+            });
+        });
+        console.log("All tables created successfully");
+    } catch (err) {
+        console.log(err);
+    }
+};
+
+module.exports = createTable;

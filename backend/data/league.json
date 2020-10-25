@@ -1,0 +1,110 @@
+[
+    {
+        "league_type_id": 2,
+        "startdate": "2008-04-18",
+        "enddate": "2008-06-01",
+        "number_of_teams": 8,
+        "country": "India",
+        "season": 1,
+        "winner": 2
+    },
+    {
+        "league_type_id": 2,
+        "startdate": "2009-04-18",
+        "enddate": "2009-05-24",
+        "number_of_teams": 8,
+        "country": "India",
+        "season": 2,
+        "winner": 5
+    },
+    {
+        "league_type_id": 2,
+        "startdate": "2010-03-12",
+        "enddate": "2010-04-25",
+        "number_of_teams": 8,
+        "country": "India",
+        "season": 3,
+        "winner": 6
+    },
+    {
+        "league_type_id": 2,
+        "startdate": "2011-04-08",
+        "enddate": "2011-05-28",
+        "number_of_teams": 10,
+        "country": "India",
+        "season": 4,
+        "winner": 6
+    },
+    {
+        "league_type_id": 2,
+        "startdate": "2012-04-04",
+        "enddate": "2012-05-27",
+        "number_of_teams": 9,
+        "country": "India",
+        "season": 5,
+        "winner": 8
+    },
+    {
+        "league_type_id": 2,
+        "startdate": "2013-04-03",
+        "enddate": "2013-05-26",
+        "number_of_teams": 9,
+        "country": "India",
+        "season": 6,
+        "winner": 4
+    },
+    {
+        "league_type_id": 2,
+        "startdate": "2014-04-16",
+        "enddate": "2014-06-01",
+        "number_of_teams": 8,
+        "country": "India",
+        "season": 7,
+        "winner": 8
+    },
+    {
+        "league_type_id": 2,
+        "startdate": "2015-04-08",
+        "enddate": "2015-05-24",
+        "number_of_teams": 8,
+        "country": "India",
+        "season": 8,
+        "winner": 4
+    },
+    {
+        "league_type_id": 2,
+        "startdate": "2016-04-09",
+        "enddate": "2016-05-29",
+        "number_of_teams": 8,
+        "country": "India",
+        "season": 9,
+        "winner": 3
+    },
+    {
+        "league_type_id": 2,
+        "startdate": "2017-04-05",
+        "enddate": "2017-05-21",
+        "number_of_teams": 8,
+        "country": "India",
+        "season": 10,
+        "winner": 4
+    },
+    {
+        "league_type_id": 2,
+        "startdate": "2018-04-07",
+        "enddate": "2018-05-27",
+        "number_of_teams": 8,
+        "country": "India",
+        "season": 11,
+        "winner": 6
+    },
+    {
+        "league_type_id": 2,
+        "startdate": "2019-03-23",
+        "enddate": "2019-05-12",
+        "number_of_teams": 8,
+        "country": "India",
+        "season": 12,
+        "winner": 4
+    }
+]
