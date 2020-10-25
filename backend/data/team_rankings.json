@@ -1,0 +1,10 @@
+[
+    { "team_id": 2, "league_id": 23, "ranks": 1, "points": 18 },
+    { "team_id": 1, "league_id": 23, "ranks": 2, "points": 16 },
+    { "team_id": 8, "league_id": 23, "ranks": 3, "points": 16 },
+    { "team_id": 6, "league_id": 23, "ranks": 4, "points": 12 },
+    { "team_id": 3, "league_id": 23, "ranks": 5, "points": 12 },
+    { "team_id": 7, "league_id": 23, "ranks": 6, "points": 12 },
+    { "team_id": 5, "league_id": 23, "ranks": 7, "points": 11 },
+    { "team_id": 4, "league_id": 23, "ranks": 8, "points": 11 }
+]
