@@ -108,7 +108,7 @@ router.post("/multiple", async (req, res) => {
 
 router.delete("/deleteall", async (req, res) => {
     var query = `DELETE FROM League;`;
-    await db.query(query, (err, result) => {
+    db.query(query, (err, result) => {
         if (err) {
             return res.status(400).send(err.message);
         }

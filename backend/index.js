@@ -5,8 +5,17 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 const createTable = require("./createtable");
 
-//Routes
-const routes = ["players", "league_type", "teams", "league", "team_rankings"];
+// Routes
+const routes = [
+    "players",
+    "league_type",
+    "teams",
+    "league",
+    "team_rankings",
+    "plays",
+    "matches",
+    "player_stats",
+];
 
 app.use(cors());
 app.use(bodyParser.json());

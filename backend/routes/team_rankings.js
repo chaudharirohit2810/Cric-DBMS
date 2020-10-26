@@ -43,10 +43,6 @@ router.get("/:league_id", async (req, res) => {
 
 router.post("/", async (req, res) => {
     try {
-        //     team_id INT,
-        // league_id INT,
-        // ranks INT,
-        // points INT,
         var { team_id, league_id, ranks, points } = req.body;
         var main = await new Promise((resolve, reject) => {
             var query = `INSERT INTO Team_Rankings VALUES (${team_id}, ${league_id}, ${ranks}, ${points})`;

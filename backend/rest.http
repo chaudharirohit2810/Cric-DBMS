@@ -1,5 +1,23 @@
-POST http://localhost:5000/team_rankings/
+POST http://localhost:5000/player_stats/
 Content-Type: application/json
 
-{ "team_id": 4, "league_id": 23, "ranks": 8, "points": 11 }
+{
+    "player_id": 1,
+    "league_id": 23,
+    "matches_played": 9,
+    "runs_scored": 260,
+    "hundreds": 0,
+    "fifties": 2,
+    "high_score": 80,
+    "not_outs": 0,
+    "strike_rate": 129.35,
+    "overs": 0,
+    "wickets": 0,
+    "economy": 0,
+    "best_bowling": "N/A",
+    "catches": 5,
+    "run_outs": 0,
+    "ducks": 1,
+    "outs": 0
+}
 

@@ -105,7 +105,7 @@ CREATE TABLE IF NOT EXIST Plays
 (
     team_id INT,
     player_id INT,
-    PRIMARY KEY(team_id, player_id)
-    FOREIGN KEY (team_id) REFERENCES Teams(team_id)
+    PRIMARY KEY(team_id, player_id),
+    FOREIGN KEY (team_id) REFERENCES Teams(team_id),
     FOREIGN KEY (player_id) REFERENCES Players(player_id)
 );
