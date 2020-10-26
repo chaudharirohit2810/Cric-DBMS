@@ -1,3 +1,37 @@
 .App {
-  background-color: #0c394e;
+    background-color: #0c394e;
+}
+
+.titles {
+    margin-left: 30px;
+    font-size: 25px;
+    padding: 10px;
+    color: #0c5970;
+}
+
+.toplookout {
+    margin-top: 65px;
+    margin-bottom: 150px;
+}
+
+.linkclass {
+    margin: 10px;
+    padding-top: 20px;
+    color: whitesmoke;
+    font-size: 15px;
+}
+
+.linkclass:hover {
+    color: whitesmoke;
+    font-size: 16px;
+}
+
+.linkclass1 {
+    margin: 0px;
+    color: whitesmoke;
+    font-size: 15px;
+}
+
+.linkclass1:hover {
+    color: whitesmoke;
 }

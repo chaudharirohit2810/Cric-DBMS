@@ -1,0 +1,23 @@
+.match {
+    background-color: #b5d5df;
+    margin: 5px;
+    color: #0c5970;
+    margin-bottom: 10px;
+    text-align: center;
+    padding: 30px;
+    text-align: left;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: all 150ms linear;
+}
+
+.match:hover {
+    background-color: #b5d5df;
+    color: #0c5970;
+    margin: 5px;
+    margin-bottom: 10px;
+    padding: 35px;
+    text-align: left;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.39);
+}
