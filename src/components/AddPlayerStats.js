@@ -7,6 +7,7 @@ class AddPlayerStats extends Component {
         super()
         this.state = {
             modal: false,
+            player: '',
             matches_played: 0,
             runs_scored: 0,
             hundreds: 0,
@@ -42,6 +43,7 @@ class AddPlayerStats extends Component {
         alert(`${this.state.team} rank added`)
         this.setState({
             modal: false,
+            player: '',
             matches_played: '',
             runs_scored: '',
             hundreds: '',
@@ -70,6 +72,12 @@ class AddPlayerStats extends Component {
                 <ModalHeader>Add Player Stats</ModalHeader>
                 <ModalBody>
                     <Form>
+                        <FormGroup>
+                            <Row>
+                                <Col xs="2"><Label>Player: </Label></Col>
+                                <Col xs="10"><Input type="number" name="player" id="player" value={this.state.player} onChange={this.handle} placeholder="Select player"/></Col>
+                            </Row>
+                        </FormGroup>
                         <FormGroup>
                             <Row>
                                 <Col xs="2"><Label>Matches: </Label></Col>
