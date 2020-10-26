@@ -1,0 +1,23 @@
+.card img {
+    border-radius: 0.6rem;
+
+    background-color: #a8a8a8;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: 60% auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.card__desc {
+    background-color: #fff;
+    border-bottom-left-radius: 0.6rem;
+    border-bottom-right-radius: 0.6rem;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.1);
+    color: #111;
+    margin: -0.6rem 0.4rem 0.3rem;
+    min-height: 10.8rem;
+    padding: 2.8rem 1rem 1rem;
+    position: relative;
+    transition: 0.2s linear;
+}

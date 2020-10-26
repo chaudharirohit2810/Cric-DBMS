@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import {
     Carousel,
     CarouselItem,
@@ -7,6 +8,7 @@ import {
     Container,
     Row,
     Col,
+    Card,
 } from "reactstrap";
 import AddMatch from "./AddMatch";
 import Style from "./match.module.scss";
