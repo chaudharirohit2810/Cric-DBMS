@@ -9,10 +9,14 @@ import {
     NavbarToggler,
     Nav,
     NavItem,
-    NavLink,
     Container
 } from 'reactstrap';
 import Search from '../Search';
+import League_Seasons from './League_Seasons';
+import Season_Details from './Season_Details';
+import AddPlayer from './AddPlayer';
+import AddTeam from './AddTeam';
+import TeamDetails from './TeamDetails';
 
 class AppNavbar extends Component {
 
@@ -43,18 +47,23 @@ class AppNavbar extends Component {
                                 </NavItem>
                                 <NavItem>
                                     <Link className="linkclass" to="/Search">Search</Link>
-                                </NavItem>     
+                                </NavItem>
+                                <NavItem>
+                                    <AddPlayer></AddPlayer>
+                                </NavItem> 
+                                <NavItem>
+                                    <AddTeam />
+                                </NavItem>    
                             </Nav> 
                         </Collapse>
                     </Container>
                 </Navbar>
                 <Switch>  
-                    <Route path="/Search">
-                        <Search />                               
-                    </Route>  
-                    <Route path="/">
-                        <HomePage name="Shirdi"/>                               
-                    </Route>
+                    <Route path="/Search" component={Search}/>  
+                    <Route path="/" exact component={HomePage}/>
+                    <Route path="/:league" exact component={League_Seasons}/>
+                    <Route path={`/:league/:season`} exact component={Season_Details}/>
+                    <Route path={`/:league/:season/:team`} component={TeamDetails}/>                             
                 </Switch>                                 
             </Router>
         )

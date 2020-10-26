@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Form, FormGroup, Label, Input, Row, Col } from 'reactstrap';
 
-class AddLeague extends Component {
+class AddRanks extends Component {
 
     constructor() {
         super()
         this.state = {
             modal: false,
-            league_name: '',
-            format: '',
+            rank: 0,
+            team: '',
+            points: 0,
         }   
     }
 
@@ -26,11 +27,12 @@ class AddLeague extends Component {
     }
 
     handleSubmit = event => {
-        alert(`${this.state.league_name} match created`)
+        alert(`${this.state.team} rank added`)
         this.setState({
             modal: false,
-            league_name: '',
-            format: '',
+            rank: 0,
+            team: '',
+            points: 0,
         })
     }
 
@@ -38,30 +40,30 @@ class AddLeague extends Component {
   return (
     <div>
         <div style={{"text-align": "right", "margin": "10px", "paddingBlockEnd": "10px"}}>
-            <Button color="danger" onClick={this.toggle}>Add League</Button>
+            <Button color="danger" onClick={this.toggle}>Add Ranks</Button>
         </div>
             <Modal isOpen={this.state.modal} toggle={this.toggle}>
-                <ModalHeader>Add League</ModalHeader>
+                <ModalHeader>Add Rank</ModalHeader>
                 <ModalBody>
                     <Form>
                         <FormGroup>
                             <Row>
-                                <Col xs="2"><Label>League: </Label></Col>
-                                <Col xs="10"><Input type="name" name="league_name" id="league_name" value={this.state.league_name} onChange={this.handle} placeholder="Enter league name"/></Col>
+                                <Col xs="2"><Label>Rank: </Label></Col>
+                                <Col xs="10"><Input type="number" name="rank" id="rank" value={this.state.rank} onChange={this.handle} placeholder="Enter rank"/></Col>
                             </Row>
                         </FormGroup>
                         <FormGroup>
                             <Row>
-                                <Col xs="2"><Label>Format </Label></Col>
-                                <Col xs="10"><Input type="select" name="format" id="format" value={this.state.format} onChange={this.handle} placeholder="Choose format type">
-                                <option>T20</option>
-                                <option>ODI</option>
-                                <option>Test</option>
-                                 </Input>   
-                                </Col>
+                                <Col xs="2"><Label>Team: </Label></Col>
+                                <Col xs="10"><Input type="name" name="team" id="team" value={this.state.team} onChange={this.handle} placeholder="Enter team name"/></Col>
                             </Row>
                         </FormGroup>
-
+                        <FormGroup>
+                            <Row>
+                                <Col xs="2"><Label>Points: </Label></Col>
+                                <Col xs="10"><Input type="number" name="points" id="points" value={this.state.points} onChange={this.handle} placeholder="Enter points"/></Col>
+                            </Row>
+                        </FormGroup>
                     </Form>
                 </ModalBody>
                 <ModalFooter>
@@ -74,4 +76,4 @@ class AddLeague extends Component {
     }
 }
 
-export default AddLeague;
+export default AddRanks;
