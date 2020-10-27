@@ -1,8 +1,4 @@
-POST http://localhost:5000/matches/multiple
-Content-Type: application/json
-
-{
-    "data": [
+[
     {
         "team1": 3,
         "team2": 2,
@@ -476,5 +472,3 @@ Content-Type: application/json
         "match_date": "2015-05-24"
     }
 ]
-
-}

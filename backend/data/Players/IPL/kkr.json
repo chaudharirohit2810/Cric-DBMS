@@ -1,0 +1,138 @@
+[
+    {
+        "first_name": "Eoin",
+        "last_name": "Morgan",
+        "image_link": "http://static.iplt20.com/players/210/197.png",
+        "role": "batsman"
+    },
+    {
+        "first_name": "Shivam",
+        "last_name": "Mavi",
+        "image_link": "http://static.iplt20.com/players/210/3779.png",
+        "role": "bowling allrounder"
+    },
+    {
+        "first_name": "Sandeep",
+        "last_name": "Warrier",
+        "image_link": "http://static.iplt20.com/players/210/1092.png",
+        "role": "bowler"
+    },
+    {
+        "first_name": "Kuldeep",
+        "last_name": "Yadav",
+        "image_link": "http://static.iplt20.com/players/210/261.png",
+        "role": "bowler"
+    },
+    {
+        "first_name": "Dinesh",
+        "last_name": "Karthik",
+        "image_link": "http://static.iplt20.com/players/210/102.png",
+        "role": "wk-batsman"
+    },
+    {
+        "first_name": "Pat",
+        "last_name": "Cummins",
+        "image_link": "http://static.iplt20.com/players/210/488.png",
+        "role": "bowler"
+    },
+    {
+        "first_name": "Sunil",
+        "last_name": "Narine",
+        "image_link": "http://static.iplt20.com/players/210/203.png",
+        "role": "bowler"
+    },
+    {
+        "first_name": "Nikhil",
+        "last_name": "Naik",
+        "image_link": "http://static.iplt20.com/players/210/2732.png",
+        "role": "batsman"
+    },
+    {
+        "first_name": "M",
+        "last_name": "Siddharth",
+        "image_link": "http://static.iplt20.com/players/210/7119.png"
+    },
+    {
+        "first_name": "Andre",
+        "last_name": "Russell",
+        "image_link": "http://static.iplt20.com/players/210/177.png",
+        "role": "bowling allrounder"
+    },
+    {
+        "first_name": "Lockie",
+        "last_name": "Ferguson",
+        "image_link": "http://static.iplt20.com/players/210/3729.png",
+        "role": "bowler"
+    },
+    {
+        "first_name": "Prasidh",
+        "last_name": "Krishna",
+        "image_link": "http://static.iplt20.com/players/210/5105.png",
+        "role": "bowler"
+    },
+    {
+        "first_name": "Shubman",
+        "last_name": "Gill",
+        "image_link": "http://static.iplt20.com/players/210/3761.png",
+        "role": "batsman"
+    },
+    {
+        "first_name": "Nitish",
+        "last_name": "Rana",
+        "image_link": "http://static.iplt20.com/players/210/2738.png",
+        "role": "batsman"
+    },
+    {
+        "first_name": "Siddhesh",
+        "last_name": "Lad",
+        "image_link": "http://static.iplt20.com/players/210/2739.png",
+        "role": "batsman"
+    },
+    {
+        "first_name": "Tim",
+        "last_name": "Seifert",
+        "image_link": "http://static.iplt20.com/players/210/1619.png",
+        "role": "wk-batsman"
+    },
+    {
+        "first_name": "Kamlesh",
+        "last_name": "Nagarkoti",
+        "image_link": "http://static.iplt20.com/players/210/3766.png",
+        "role": "bowler"
+    },
+    {
+        "first_name": "Rinku",
+        "last_name": "Singh",
+        "image_link": "http://static.iplt20.com/players/210/3830.png",
+        "role": "batsman"
+    },
+    {
+        "first_name": "Varun",
+        "last_name": "Chakravarthy",
+        "image_link": "http://static.iplt20.com/players/210/5432.png",
+        "role": "bowler"
+    },
+    {
+        "first_name": "Ali",
+        "last_name": "Khan",
+        "image_link": "http://static.iplt20.com/players/210/20569.png"
+    },
+    {
+        "first_name": "Tom",
+        "last_name": "Banton",
+        "image_link": "http://static.iplt20.com/players/210/Photo-Missing.png",
+        "role": "wk-batsman"
+    },
+    {
+        "first_name": "Chris",
+        "last_name": "Green",
+        "image_link": "http://static.iplt20.com/players/210/Photo-Missing.png",
+        "role": "bowling allrounder"
+    },
+    {
+        "first_name": "Rahul",
+        "last_name": "Tripathi",
+        "image_link": "http://static.iplt20.com/players/210/Photo-Missing.png",
+        "role": "batsman"
+    }
+]

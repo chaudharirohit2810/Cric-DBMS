@@ -1,0 +1,138 @@
+[
+    {
+        "first_name": "Shreyas",
+        "last_name": "Iyer",
+        "image_link": "http://static.iplt20.com/players/210/1563.png",
+        "role": "batsman"
+    },
+    {
+        "first_name": "Ajinkya",
+        "last_name": "Rahane",
+        "image_link": "http://static.iplt20.com/players/210/135.png",
+        "role": "batsman"
+    },
+    {
+        "first_name": "Amit",
+        "last_name": "Mishra",
+        "image_link": "http://static.iplt20.com/players/210/30.png",
+        "role": "bowler"
+    },
+    {
+        "first_name": "Avesh",
+        "last_name": "Khan",
+        "image_link": "http://static.iplt20.com/players/210/1561.png",
+        "role": "bowler"
+    },
+    {
+        "first_name": "Axar",
+        "last_name": "Patel",
+        "image_link": "http://static.iplt20.com/players/210/1113.png",
+        "role": "bowling allrounder"
+    },
+    {
+        "first_name": "Harshal",
+        "last_name": "Patel",
+        "image_link": "http://static.iplt20.com/players/210/157.png",
+        "role": "bowler"
+    },
+    {
+        "first_name": "Ishant",
+        "last_name": "Sharma",
+        "image_link": "http://static.iplt20.com/players/210/38.png",
+        "role": "bowler"
+    },
+    {
+        "first_name": "Kagiso",
+        "last_name": "Rabada",
+        "image_link": "http://static.iplt20.com/players/210/1664.png",
+        "role": "bowler"
+    },
+    {
+        "first_name": "Keemo",
+        "last_name": "Paul",
+        "image_link": "http://static.iplt20.com/players/210/3101.png",
+        "role": "bowling allrounder"
+    },
+    {
+        "first_name": "Prithvi",
+        "last_name": "Shaw",
+        "image_link": "http://static.iplt20.com/players/210/3764.png",
+        "role": "batsman"
+    },
+    {
+        "first_name": "Ravichandran",
+        "last_name": "Ashwin",
+        "image_link": "http://static.iplt20.com/players/210/8.png",
+        "role": "bowling allrounder"
+    },
+    {
+        "first_name": "Rishabh",
+        "last_name": "Pant",
+        "image_link": "http://static.iplt20.com/players/210/2972.png",
+        "role": "wk-batsman"
+    },
+    {
+        "first_name": "Sandeep",
+        "last_name": "Lamichhane",
+        "image_link": "http://static.iplt20.com/players/210/3013.png",
+        "role": "bowler"
+    },
+    {
+        "first_name": "Shikhar",
+        "last_name": "Dhawan",
+        "image_link": "http://static.iplt20.com/players/210/41.png",
+        "role": "batsman"
+    },
+    {
+        "first_name": "Alex",
+        "last_name": "Carey",
+        "image_link": "http://static.iplt20.com/players/210/3882.png",
+        "role": "wk-batsman"
+    },
+    {
+        "first_name": "Shimron",
+        "last_name": "Hetmyer",
+        "image_link": "http://static.iplt20.com/players/210/1705.png",
+        "role": "batsman"
+    },
+    {
+        "first_name": "Mohit",
+        "last_name": "Sharma",
+        "image_link": "http://static.iplt20.com/players/210/1107.png",
+        "role": "bowler"
+    },
+    {
+        "first_name": "Tushar",
+        "last_name": "Deshpande",
+        "image_link": "http://static.iplt20.com/players/210/3257.png",
+        "role": "bowler"
+    },
+    {
+        "first_name": "Marcus",
+        "last_name": "Stoinis",
+        "image_link": "http://static.iplt20.com/players/210/964.png",
+        "role": "batting allrounder"
+    },
+    {
+        "first_name": "Lalith",
+        "last_name": "Yadav",
+        "image_link": "http://static.iplt20.com/players/210/6870.png"
+    },
+    {
+        "first_name": "Anrich",
+        "last_name": "Nortje",
+        "image_link": "http://static.iplt20.com/players/210/5433.png",
+        "role": "bowler"
+    },
+    {
+        "first_name": "Daniel",
+        "last_name": "Sams",
+        "image_link": "http://static.iplt20.com/players/210/4649.png",
+        "role": "bowling allrounder"
+    },
+    {
+        "first_name": "Pravin",
+        "last_name": "Dubey",
+        "image_link": "http://static.iplt20.com/players/210/3188.png"
+    }
+]

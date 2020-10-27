@@ -1,0 +1,146 @@
+[
+    {
+        "first_name": "Rohit",
+        "last_name": "Sharma",
+        "image_link": "http://static.iplt20.com/players/210/107.png",
+        "role": "batsman"
+    },
+    {
+        "first_name": "Aditya",
+        "last_name": "Tare",
+        "image_link": "http://static.iplt20.com/players/210/99.png",
+        "role": "wk-batsman"
+    },
+    {
+        "first_name": "Anmolpreet",
+        "last_name": "Singh",
+        "image_link": "http://static.iplt20.com/players/210/2965.png",
+        "role": "batsman"
+    },
+    {
+        "first_name": "Anukul",
+        "last_name": "Roy",
+        "image_link": "http://static.iplt20.com/players/210/3774.png",
+        "role": "batting allrounder"
+    },
+    {
+        "first_name": "Dhawal",
+        "last_name": "Kulkarni",
+        "image_link": "http://static.iplt20.com/players/210/101.png",
+        "role": "bowler"
+    },
+    {
+        "first_name": "Hardik",
+        "last_name": "Pandya",
+        "image_link": "http://static.iplt20.com/players/210/2740.png",
+        "role": "batting allrounder"
+    },
+    {
+        "first_name": "Ishan",
+        "last_name": "Kishan",
+        "image_link": "http://static.iplt20.com/players/210/2975.png",
+        "role": "wk-batsman"
+    },
+    {
+        "first_name": "Jasprit",
+        "last_name": "Bumrah",
+        "image_link": "http://static.iplt20.com/players/210/1124.png",
+        "role": "bowler"
+    },
+    {
+        "first_name": "Jayant",
+        "last_name": "Yadav",
+        "image_link": "http://static.iplt20.com/players/210/1740.png",
+        "role": "bowler"
+    },
+    {
+        "first_name": "Kieron",
+        "last_name": "Pollard",
+        "image_link": "http://static.iplt20.com/players/210/210.png",
+        "role": "batting allrounder"
+    },
+    {
+        "first_name": "Krunal",
+        "last_name": "Pandya",
+        "image_link": "http://static.iplt20.com/players/210/3183.png",
+        "role": "batting allrounder"
+    },
+    {
+        "first_name": "Mitchell",
+        "last_name": "McClenaghan",
+        "image_link": "http://static.iplt20.com/players/210/730.png",
+        "role": "bowler"
+    },
+    {
+        "first_name": "Quinton",
+        "last_name": "de Kock",
+        "image_link": "http://static.iplt20.com/players/210/834.png",
+        "role": "wk-batsman"
+    },
+    {
+        "first_name": "Rahul",
+        "last_name": "Chahar",
+        "image_link": "http://static.iplt20.com/players/210/3763.png",
+        "role": "bowler"
+    },
+    {
+        "first_name": "Sherfane",
+        "last_name": "Rutherford",
+        "image_link": "http://static.iplt20.com/players/210/5396.png",
+        "role": "batting allrounder"
+    },
+    {
+        "first_name": "Suryakumar",
+        "last_name": "Yadav",
+        "image_link": "http://static.iplt20.com/players/210/108.png",
+        "role": "batsman"
+    },
+    {
+        "first_name": "Trent",
+        "last_name": "Boult",
+        "image_link": "http://static.iplt20.com/players/210/969.png",
+        "role": "bowler"
+    },
+    {
+        "first_name": "Chris",
+        "last_name": "Lynn",
+        "image_link": "http://static.iplt20.com/players/210/179.png",
+        "role": "batsman"
+    },
+    {
+        "first_name": "Nathan",
+        "last_name": "Coulter-Nile",
+        "image_link": "http://static.iplt20.com/players/210/Photo-Missing.png",
+        "role": "bowler"
+    },
+    {
+        "first_name": "Saurabh",
+        "last_name": "Tiwary",
+        "image_link": "http://static.iplt20.com/players/210/Photo-Missing.png",
+        "role": "batsman"
+    },
+    {
+        "first_name": "Mohsin",
+        "last_name": "Khan",
+        "image_link": "http://static.iplt20.com/players/210/Photo-Missing.png",
+        "role": "bowler"
+    },
+    {
+        "first_name": "Digvijay",
+        "last_name": "Deshmukh",
+        "image_link": "http://static.iplt20.com/players/210/Photo-Missing.png",
+        "role": "bowler"
+    },
+    {
+        "first_name": "Prince",
+        "last_name": "Balwant Rai Singh",
+        "image_link": "http://static.iplt20.com/players/210/Photo-Missing.png",
+        "role": "bowling allrounder"
+    },
+    {
+        "first_name": "James",
+        "last_name": "Pattinson",
+        "image_link": "http://static.iplt20.com/players/210/Photo-Missing.png",
+        "role": "bowler"
+    }
+]
