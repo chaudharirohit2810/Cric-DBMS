@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<license id="0bc3a29e-aac9-4b6d-aa4f-d5bd94fdee8a" expiration="2021-10-27T00:00:00.0000000" type="Standard" Email="chaudharirohit2810@gmail.com" IsStudent="true">
+  <name>Rohit Kailas Chaudhari</name>
+  <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+    <SignedInfo>
+      <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+      <SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256" />
+      <Reference URI="">
+        <Transforms>
+          <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+        </Transforms>
+        <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256" />
+        <DigestValue>KYpSZPjSMc3gNbIQ9LPOtORvTrQxTMviEksyh360R9c=</DigestValue>
+      </Reference>
+    </SignedInfo>
+    <SignatureValue>YdaGlYMqmC3Sx1humMmYHsYtP350lsgIGHf2HWp1rdMgG5U9GRvz91o/T+p9hwcFBSfnP6qig7I515JkqRt5Vs9g5biTushEQczCj/YszwHEUtUijal8TDS4CTAYImatlIDEcsiQR+A5m09NFjivXgOp2CyB2ff0ItTw24B0KJY=</SignatureValue>
+  </Signature>
+</license>

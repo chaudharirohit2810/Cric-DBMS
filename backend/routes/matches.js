@@ -18,6 +18,7 @@ const mysql = require("mysql");
 const config = require("../config");
 
 const db = mysql.createPool(config.mysql);
+
 // Get All Matches
 router.get("/", async (req, res) => {
     try {

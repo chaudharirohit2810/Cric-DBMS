@@ -1,479 +1,223 @@
-POST http://localhost:5000/matches/multiple
+POST http://localhost:5000/league/multiple
 Content-Type: application/json
 
 {
     "data": [
     {
-        "team1": 3,
-        "team2": 2,
-        "won_by": 3,
-        "league_id": 23,
-        "match_number": 1,
-        "match_date": "2015-04-08"
+        "league_id": 11,
+        "league_type_id": 1,
+        "startdate": "2008-04-17T18:30:00.000Z",
+        "enddate": "2008-05-31T18:30:00.000Z",
+        "duration": 44,
+        "number_of_teams": 8,
+        "country": "India",
+        "season": 1,
+        "winner": 5,
+        "team": [
+            {
+                "team_id": 5,
+                "team_name": "Rajasthan Royals",
+                "logo_link": "https://upload.wikimedia.org/wikipedia/en/thumb/6/60/Rajasthan_Royals_Logo.svg/250px-Rajasthan_Royals_Logo.svg.png"
+            }
+        ]
     },
     {
-        "team1": 1,
-        "team2": 8,
-        "won_by": 1,
-        "league_id": 23,
-        "match_number": 2,
-        "match_date": "2015-04-09"
+        "league_id": 12,
+        "league_type_id": 1,
+        "startdate": "2009-04-17T18:30:00.000Z",
+        "enddate": "2009-05-23T18:30:00.000Z",
+        "duration": 36,
+        "number_of_teams": 8,
+        "country": "India",
+        "season": 2,
+        "winner": 9,
+        "team": [
+            {
+                "team_id": 9,
+                "team_name": "Deccan Chargers",
+                "logo_link": "https://upload.wikimedia.org/wikipedia/en/thumb/a/a6/HyderabadDeccanChargers.png/200px-HyderabadDeccanChargers.png"
+            }
+        ]
     },
     {
-        "team1": 7,
-        "team2": 5,
-        "won_by": 5,
-        "league_id": 23,
-        "match_number": 3,
-        "match_date": "2015-04-10"
+        "league_id": 13,
+        "league_type_id": 1,
+        "startdate": "2010-03-11T18:30:00.000Z",
+        "enddate": "2010-04-24T18:30:00.000Z",
+        "duration": 44,
+        "number_of_teams": 8,
+        "country": "India",
+        "season": 3,
+        "winner": 1,
+        "team": [
+            {
+                "team_id": 1,
+                "team_name": "Chennai Super Kings",
+                "logo_link": "https://upload.wikimedia.org/wikipedia/en/thumb/2/2b/Chennai_Super_Kings_Logo.svg/250px-Chennai_Super_Kings_Logo.svg.png"
+            }
+        ]
     },
     {
-        "team1": 1,
-        "team2": 6,
-        "won_by": 1,
-        "league_id": 23,
-        "match_number": 4,
-        "match_date": "2015-04-11"
+        "league_id": 14,
+        "league_type_id": 1,
+        "startdate": "2011-04-07T18:30:00.000Z",
+        "enddate": "2011-05-27T18:30:00.000Z",
+        "duration": 50,
+        "number_of_teams": 10,
+        "country": "India",
+        "season": 4,
+        "winner": 1,
+        "team": [
+            {
+                "team_id": 1,
+                "team_name": "Chennai Super Kings",
+                "logo_link": "https://upload.wikimedia.org/wikipedia/en/thumb/2/2b/Chennai_Super_Kings_Logo.svg/250px-Chennai_Super_Kings_Logo.svg.png"
+            }
+        ]
     },
     {
-        "team1": 3,
-        "team2": 4,
-        "won_by": 4,
-        "league_id": 23,
-        "match_number": 5,
-        "match_date": "2015-04-11"
+        "league_id": 15,
+        "league_type_id": 1,
+        "startdate": "2012-04-03T18:30:00.000Z",
+        "enddate": "2012-05-26T18:30:00.000Z",
+        "duration": 53,
+        "number_of_teams": 9,
+        "country": "India",
+        "season": 5,
+        "winner": 3,
+        "team": [
+            {
+                "team_id": 3,
+                "team_name": "Kolkata Knight Riders",
+                "logo_link": "https://upload.wikimedia.org/wikipedia/en/thumb/4/4c/Kolkata_Knight_Riders_Logo.svg/230px-Kolkata_Knight_Riders_Logo.svg.png"
+            }
+        ]
     },
     {
-        "team1": 8,
-        "team2": 5,
-        "won_by": 5,
-        "league_id": 23,
-        "match_number": 6,
-        "match_date": "2015-04-12"
+        "league_id": 16,
+        "league_type_id": 1,
+        "startdate": "2013-04-02T18:30:00.000Z",
+        "enddate": "2013-05-25T18:30:00.000Z",
+        "duration": 53,
+        "number_of_teams": 9,
+        "country": "India",
+        "season": 6,
+        "winner": 2,
+        "team": [
+            {
+                "team_id": 2,
+                "team_name": "Mumbai Indians",
+                "logo_link": "https://upload.wikimedia.org/wikipedia/en/thumb/c/cd/Mumbai_Indians_Logo.svg/250px-Mumbai_Indians_Logo.svg.png"
+            }
+        ]
     },
     {
-        "team1": 2,
-        "team2": 7,
-        "won_by": 7,
-        "league_id": 23,
-        "match_number": 7,
-        "match_date": "2015-04-12"
+        "league_id": 17,
+        "league_type_id": 1,
+        "startdate": "2014-04-15T18:30:00.000Z",
+        "enddate": "2014-05-31T18:30:00.000Z",
+        "duration": 46,
+        "number_of_teams": 8,
+        "country": "India",
+        "season": 7,
+        "winner": 3,
+        "team": [
+            {
+                "team_id": 3,
+                "team_name": "Kolkata Knight Riders",
+                "logo_link": "https://upload.wikimedia.org/wikipedia/en/thumb/4/4c/Kolkata_Knight_Riders_Logo.svg/230px-Kolkata_Knight_Riders_Logo.svg.png"
+            }
+        ]
     },
     {
-        "team1": 4,
-        "team2": 6,
-        "won_by": 6,
-        "league_id": 23,
-        "match_number": 8,
-        "match_date": "2015-04-13"
+        "league_id": 19,
+        "league_type_id": 1,
+        "startdate": "2016-04-08T18:30:00.000Z",
+        "enddate": "2016-05-28T18:30:00.000Z",
+        "duration": 50,
+        "number_of_teams": 8,
+        "country": "India",
+        "season": 9,
+        "winner": 6,
+        "team": [
+            {
+                "team_id": 6,
+                "team_name": "Sunrisers Hyderabad",
+                "logo_link": "https://upload.wikimedia.org/wikipedia/en/thumb/8/81/Sunrisers_Hyderabad.svg/200px-Sunrisers_Hyderabad.svg.png"
+            }
+        ]
     },
     {
-        "team1": 5,
-        "team2": 2,
-        "won_by": 5,
-        "league_id": 23,
-        "match_number": 9,
-        "match_date": "2015-04-14"
+        "league_id": 20,
+        "league_type_id": 1,
+        "startdate": "2017-04-04T18:30:00.000Z",
+        "enddate": "2017-05-20T18:30:00.000Z",
+        "duration": 46,
+        "number_of_teams": 8,
+        "country": "India",
+        "season": 10,
+        "winner": 2,
+        "team": [
+            {
+                "team_id": 2,
+                "team_name": "Mumbai Indians",
+                "logo_link": "https://upload.wikimedia.org/wikipedia/en/thumb/c/cd/Mumbai_Indians_Logo.svg/250px-Mumbai_Indians_Logo.svg.png"
+            }
+        ]
     },
     {
-        "team1": 3,
-        "team2": 1,
-        "won_by": 3,
-        "league_id": 23,
-        "match_number": 10,
-        "match_date": "2015-04-30"
+        "league_id": 21,
+        "league_type_id": 1,
+        "startdate": "2018-04-06T18:30:00.000Z",
+        "enddate": "2018-05-26T18:30:00.000Z",
+        "duration": 50,
+        "number_of_teams": 8,
+        "country": "India",
+        "season": 11,
+        "winner": 1,
+        "team": [
+            {
+                "team_id": 1,
+                "team_name": "Chennai Super Kings",
+                "logo_link": "https://upload.wikimedia.org/wikipedia/en/thumb/2/2b/Chennai_Super_Kings_Logo.svg/250px-Chennai_Super_Kings_Logo.svg.png"
+            }
+        ]
     },
     {
-        "team1": 7,
-        "team2": 8,
-        "won_by": 8,
-        "league_id": 23,
-        "match_number": 11,
-        "match_date": "2015-04-15"
+        "league_id": 22,
+        "league_type_id": 1,
+        "startdate": "2019-03-22T18:30:00.000Z",
+        "enddate": "2019-05-11T18:30:00.000Z",
+        "duration": 50,
+        "number_of_teams": 8,
+        "country": "India",
+        "season": 12,
+        "winner": 2,
+        "team": [
+            {
+                "team_id": 2,
+                "team_name": "Mumbai Indians",
+                "logo_link": "https://upload.wikimedia.org/wikipedia/en/thumb/c/cd/Mumbai_Indians_Logo.svg/250px-Mumbai_Indians_Logo.svg.png"
+            }
+        ]
     },
     {
-        "team1": 6,
-        "team2": 5,
-        "won_by": 5,
         "league_id": 23,
-        "match_number": 12,
-        "match_date": "2015-04-16"
-    },
-    {
-        "team1": 2,
-        "team2": 1,
-        "won_by": 1,
-        "league_id": 23,
-        "match_number": 13,
-        "match_date": "2015-04-17"
-    },
-    {
-        "team1": 6,
-        "team2": 8,
-        "won_by": 8,
-        "league_id": 23,
-        "match_number": 14,
-        "match_date": "2015-04-18"
-    },
-    {
-        "team1": 7,
-        "team2": 3,
-        "won_by": 3,
-        "league_id": 23,
-        "match_number": 15,
-        "match_date": "2015-04-18"
-    },
-    {
-        "team1": 5,
-        "team2": 1,
-        "won_by": 5,
-        "league_id": 23,
-        "match_number": 16,
-        "match_date": "2015-04-19"
-    },
-    {
-        "team1": 4,
-        "team2": 2,
-        "won_by": 2,
-        "league_id": 23,
-        "match_number": 17,
-        "match_date": "2015-04-19"
-    },
-    {
-        "team1": 8,
-        "team2": 3,
-        "won_by": 3,
-        "league_id": 23,
-        "match_number": 18,
-        "match_date": "2015-04-20"
-    },
-    {
-        "team1": 5,
-        "team2": 7,
-        "won_by": 5,
-        "league_id": 23,
-        "match_number": 19,
-        "match_date": "2015-04-21"
-    },
-    {
-        "team1": 6,
-        "team2": 3,
-        "won_by": 6,
-        "league_id": 23,
-        "match_number": 20,
-        "match_date": "2015-04-22"
-    },
-    {
-        "team1": 4,
-        "team2": 1,
-        "won_by": 1,
-        "league_id": 23,
-        "match_number": 21,
-        "match_date": "2015-04-22"
-    },
-    {
-        "team1": 8,
-        "team2": 2,
-        "won_by": 8,
-        "league_id": 23,
-        "match_number": 22,
-        "match_date": "2015-04-23"
-    },
-    {
-        "team1": 5,
-        "team2": 4,
-        "won_by": 4,
-        "league_id": 23,
-        "match_number": 23,
-        "match_date": "2015-04-24"
-    },
-    {
-        "team1": 2,
-        "team2": 6,
-        "won_by": 2,
-        "league_id": 23,
-        "match_number": 24,
-        "match_date": "2015-04-25"
-    },
-    {
-        "team1": 1,
-        "team2": 7,
-        "won_by": 1,
-        "league_id": 23,
-        "match_number": 25,
-        "match_date": "2015-04-25"
-    },
-    {
-        "team1": 8,
-        "team2": 4,
-        "won_by": 4,
-        "league_id": 23,
-        "match_number": 26,
-        "match_date": "2015-04-26"
-    },
-    {
-        "team1": 7,
-        "team2": 6,
-        "won_by": 6,
-        "league_id": 23,
-        "match_number": 27,
-        "match_date": "2015-04-27"
-    },
-    {
-        "team1": 3,
-        "team2": 8,
-        "won_by": 3,
-        "league_id": 23,
-        "match_number": 28,
-        "match_date": "2015-05-07"
-    },
-    {
-        "team1": 4,
-        "team2": 5,
-        "won_by": 4,
-        "league_id": 23,
-        "match_number": 29,
-        "match_date": "2015-04-29"
-    },
-    {
-        "team1": 1,
-        "team2": 3,
-        "won_by": 1,
-        "league_id": 23,
-        "match_number": 30,
-        "match_date": "2015-04-28"
-    },
-    {
-        "team1": 8,
-        "team2": 7,
-        "won_by": 8,
-        "league_id": 23,
-        "match_number": 31,
-        "match_date": "2015-05-01"
-    },
-    {
-        "team1": 2,
-        "team2": 5,
-        "won_by": 2,
-        "league_id": 23,
-        "match_number": 32,
-        "match_date": "2015-05-01"
-    },
-    {
-        "team1": 4,
-        "team2": 3,
-        "won_by": 4,
-        "league_id": 23,
-        "match_number": 33,
-        "match_date": "2015-05-02"
-    },
-    {
-        "team1": 6,
-        "team2": 1,
-        "won_by": 6,
-        "league_id": 23,
-        "match_number": 34,
-        "match_date": "2015-05-02"
-    },
-    {
-        "team1": 7,
-        "team2": 2,
-        "won_by": 2,
-        "league_id": 23,
-        "match_number": 35,
-        "match_date": "2015-05-03"
-    },
-    {
-        "team1": 5,
-        "team2": 8,
-        "won_by": 5,
-        "league_id": 23,
-        "match_number": 36,
-        "match_date": "2015-05-03"
-    },
-    {
-        "team1": 1,
-        "team2": 4,
-        "won_by": 1,
-        "league_id": 23,
-        "match_number": 37,
-        "match_date": "2015-05-04"
-    },
-    {
-        "team1": 3,
-        "team2": 6,
-        "won_by": 3,
-        "league_id": 23,
-        "match_number": 38,
-        "match_date": "2015-05-04"
-    },
-    {
-        "team1": 2,
-        "team2": 8,
-        "won_by": 2,
-        "league_id": 23,
-        "match_number": 39,
-        "match_date": "2015-05-05"
-    },
-    {
-        "team1": 4,
-        "team2": 7,
-        "won_by": 4,
-        "league_id": 23,
-        "match_number": 40,
-        "match_date": "2015-05-06"
-    },
-    {
-        "team1": 5,
-        "team2": 6,
-        "won_by": 6,
-        "league_id": 23,
-        "match_number": 41,
-        "match_date": "2015-05-07"
-    },
-    {
-        "team1": 1,
-        "team2": 2,
-        "won_by": 2,
-        "league_id": 23,
-        "match_number": 42,
-        "match_date": "2015-05-08"
-    },
-    {
-        "team1": 3,
-        "team2": 7,
-        "won_by": 3,
-        "league_id": 23,
-        "match_number": 43,
-        "match_date": "2015-05-09"
-    },
-    {
-        "team1": 8,
-        "team2": 6,
-        "won_by": 6,
-        "league_id": 23,
-        "match_number": 44,
-        "match_date": "2015-05-09"
-    },
-    {
-        "team1": 2,
-        "team2": 4,
-        "won_by": 4,
-        "league_id": 23,
-        "match_number": 45,
-        "match_date": "2015-05-10"
-    },
-    {
-        "team1": 1,
-        "team2": 5,
-        "won_by": 1,
-        "league_id": 23,
-        "match_number": 46,
-        "match_date": "2015-05-10"
-    },
-    {
-        "team1": 6,
-        "team2": 7,
-        "won_by": 6,
-        "league_id": 23,
-        "match_number": 47,
-        "match_date": "2015-05-11"
-    },
-    {
-        "team1": 8,
-        "team2": 1,
-        "won_by": 8,
-        "league_id": 23,
-        "match_number": 48,
-        "match_date": "2015-05-12"
-    },
-    {
-        "team1": 7,
-        "team2": 4,
-        "won_by": 7,
-        "league_id": 23,
-        "match_number": 49,
-        "match_date": "2015-05-13"
-    },
-    {
-        "team1": 2,
-        "team2": 3,
-        "won_by": 2,
-        "league_id": 23,
-        "match_number": 50,
-        "match_date": "2015-05-14"
-    },
-    {
-        "team1": 6,
-        "team2": 4,
-        "won_by": 4,
-        "league_id": 23,
-        "match_number": 51,
-        "match_date": "2015-05-15"
-    },
-    {
-        "team1": 7,
-        "team2": 1,
-        "won_by": 1,
-        "league_id": 23,
-        "match_number": 52,
-        "match_date": "2015-05-16"
-    },
-    {
-        "team1": 5,
-        "team2": 3,
-        "won_by": 5,
-        "league_id": 23,
-        "match_number": 53,
-        "match_date": "2015-05-16"
-    },
-    {
-        "team1": 4,
-        "team2": 8,
-        "won_by": 8,
-        "league_id": 23,
-        "match_number": 54,
-        "match_date": "2015-05-17"
-    },
-    {
-        "team1": 6,
-        "team2": 2,
-        "won_by": 2,
-        "league_id": 23,
-        "match_number": 55,
-        "match_date": "2015-05-17"
-    },
-    {
-        "team1": 1,
-        "team2": 2,
-        "won_by": 2,
-        "league_id": 23,
-        "match_number": 56,
-        "match_date": "2015-05-19"
-    },
-    {
-        "team1": 4,
-        "team2": 5,
-        "won_by": 4,
-        "league_id": 23,
-        "match_number": 57,
-        "match_date": "2015-05-20"
-    },
-    {
-        "team1": 1,
-        "team2": 4,
-        "won_by": 1,
-        "league_id": 23,
-        "match_number": 58,
-        "match_date": "2015-05-22"
-    },
-    {
-        "team1": 2,
-        "team2": 1,
-        "won_by": 2,
-        "league_id": 23,
-        "match_number": 59,
-        "match_date": "2015-05-24"
+        "league_type_id": 1,
+        "startdate": "2020-04-07T18:30:00.000Z",
+        "enddate": "2020-05-23T18:30:00.000Z",
+        "duration": 46,
+        "number_of_teams": 8,
+        "country": "India",
+        "season": 8,
+        "winner": 2,
+        "team": [
+            {
+                "team_id": 2,
+                "team_name": "Mumbai Indians",
+                "logo_link": "https://upload.wikimedia.org/wikipedia/en/thumb/c/cd/Mumbai_Indians_Logo.svg/250px-Mumbai_Indians_Logo.svg.png"
+            }
+        ]
     }
 ]
 

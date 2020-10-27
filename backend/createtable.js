@@ -118,13 +118,18 @@ var queries = [
 
 const createTable = async () => {
     try {
-        queries.map((query) => {
-            db.query(query, (err, result) => {
-                if (err) {
-                    console.log(err.message);
-                }
-            });
-        });
+        await Promise.all(
+            queries.map(async (query) => {
+                await new Promise((resolve, reject) => {
+                    db.query(query, (err, result) => {
+                        if (err) {
+                            reject(err);
+                        }
+                        resolve(result);
+                    });
+                });
+            })
+        );
         console.log("All tables created successfully");
     } catch (err) {
         console.log(err);
