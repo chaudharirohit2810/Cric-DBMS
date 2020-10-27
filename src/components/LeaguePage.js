@@ -1,8 +1,7 @@
 import React, {Component} from 'react'
-import { Col, Row, Button } from 'reactstrap'
-import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
+import { Col, Row } from 'reactstrap'
+import { Link } from 'react-router-dom'
 import AddLeague from './AddLeague'
-import League_Seasons from './League_Seasons'
 
 class LeaguePage extends Component {
 
@@ -61,18 +60,9 @@ class LeaguePage extends Component {
                                     {`League Format: ${lea.Format}`}
                                 </div>
 
-                                <div style ={{"text-align": "center"}}>
-                                    {/* <Router>
-                                        <Link to="/Season">Browse</Link>
-                                        <Switch>
-                                            <Route path="/Season">
-                                                <League_Seasons/>
-                                            </Route>
-                                        </Switch>
-                                    </Router> */}
-                                    
+                                <div style ={{"text-align": "center", "marginTop": "10px"}}>
+                                    <Link className="btn btn-info" to={`/${lea.League_name}`}>Details</Link> 
                                 </div>
-
                             </Col>
                         <Col lg="1"></Col>
                     </Row>

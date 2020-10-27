@@ -80,3 +80,17 @@
     padding: 10px;
     color:#0c5970
 }
+
+.linkss {
+    color: whitesmoke;
+    font-size: 15px;
+    margin-left: 10px;
+    cursor: pointer
+}
+
+.linkss:hover {
+    color: whitesmoke;
+    font-size: 16px;
+    margin-left: 10px;
+    cursor: pointer
+}
