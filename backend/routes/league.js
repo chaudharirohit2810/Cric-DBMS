@@ -8,7 +8,7 @@ router.get("/:league_type", async (req, res) => {
     try {
         const league_type = req.params.league_type;
         var main = await new Promise((resolve, reject) => {
-            var query = `SELECT * from League WHERE league_type_id = ${league_type}`;
+            var query = `SELECT * from League WHERE league_type_id = ${league_type} ORDER BY startdate;`;
             db.query(query, (err, result) => {
                 if (err) {
                     reject(err);
