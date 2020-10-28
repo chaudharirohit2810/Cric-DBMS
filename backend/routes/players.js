@@ -32,11 +32,11 @@ router.post("/", async (req, res) => {
                 last_name,
                 age,
                 career_start,
-                player_role,
+                role,
                 image_link,
             } = req.body;
             var query = `INSERT INTO Players (first_name, last_name, age, career_start, player_role, image_link) \
-            VALUES ("${first_name}", "${last_name}", ${age}, "${career_start}", "${player_role}", "${image_link}")`;
+            VALUES ("${first_name}", "${last_name}", ${age}, "${career_start}", "${role}", "${image_link}")`;
 
             db.query(query, (err, result) => {
                 if (err) {

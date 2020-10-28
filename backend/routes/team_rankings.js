@@ -66,7 +66,7 @@ router.post("/", async (req, res) => {
     try {
         var { team_id, league_id, ranks, points } = req.body;
         var main = await new Promise((resolve, reject) => {
-            var query = `INSERT INTO Team_Rankings VALUES (${team_id}, ${league_id}, ${ranks}, ${points})`;
+            var query = `INSERT INTO Team_Rankings (team_id, league_id, ranks, points) VALUES (${team_id}, ${league_id}, ${ranks}, ${points})`;
             db.query(query, (err, result) => {
                 if (err) {
                     reject(err);

@@ -1,15 +1,18 @@
 import React, { Component } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Form, FormGroup, Label, Input, Row, Col } from 'reactstrap';
+import axios from 'axios'
 
 class AddRanks extends Component {
 
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
         this.state = {
             modal: false,
-            rank: 0,
+            league_id: props.conts.league_id,
             team: '',
+            team_id: 0,
             points: 0,
+            rank: 0,
         }   
     }
 
@@ -26,17 +29,42 @@ class AddRanks extends Component {
         })
     }
 
+    handle1 = event => {
+        this.setState({
+            team : event.target.value,
+            team_id: event.target[event.target.selectedIndex].id
+        })
+    }
+
     handleSubmit = event => {
-        alert(`${this.state.team} rank added`)
+        const body = {
+            "team_id": this.state.team_id,
+            "league_id": this.state.league_id,
+            "points": this.state.points,
+            "ranks": this.state.rank
+        }
+        axios.post("http://localhost:5000/team_rankings/", body)
+        .then(response => {
+            alert(`${this.state.team} rank added`)
+        })
+        .catch(error => {
+            console.log(error)
+        })
         this.setState({
             modal: false,
-            rank: 0,
             team: '',
+            team_id: 0,
             points: 0,
+            rank: 0
         })
     }
 
     render() {
+        const teams = this.props.conts.teams
+
+        const ops = teams.map(team =>
+            <option key={team.team_id} id={team.team_id}>{team.team_name}</option>
+        )
   return (
     <div>
         <div style={{"text-align": "right", "margin": "10px", "paddingBlockEnd": "10px"}}>
@@ -48,14 +76,19 @@ class AddRanks extends Component {
                     <Form>
                         <FormGroup>
                             <Row>
-                                <Col xs="2"><Label>Rank: </Label></Col>
-                                <Col xs="10"><Input type="number" name="rank" id="rank" value={this.state.rank} onChange={this.handle} placeholder="Enter rank"/></Col>
+                                <Col xs="2"><Label>Team: </Label></Col>
+                                <Col xs="10"><Input type="select" name="team" id="team" value={this.state.team} onChange={this.handle1} placeholder="Enter team name">
+                                    {
+                                        ops
+                                    }
+                                    </Input>
+                                </Col>
                             </Row>
                         </FormGroup>
                         <FormGroup>
                             <Row>
-                                <Col xs="2"><Label>Team: </Label></Col>
-                                <Col xs="10"><Input type="name" name="team" id="team" value={this.state.team} onChange={this.handle} placeholder="Enter team name"/></Col>
+                                <Col xs="2"><Label>Rank: </Label></Col>
+                                <Col xs="10"><Input type="number" name="rank" id="rank" value={this.state.rank} onChange={this.handle} placeholder="Enter rank"/></Col>
                             </Row>
                         </FormGroup>
                         <FormGroup>
