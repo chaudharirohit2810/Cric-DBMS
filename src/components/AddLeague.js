@@ -9,7 +9,7 @@ class AddLeague extends Component {
         this.state = {
             modal: false,
             league_name: '',
-            league_format: '',
+            league_format: 'T20',
             league_logo_link: '',
         }   
     }
@@ -28,8 +28,7 @@ class AddLeague extends Component {
     }
 
     handleSubmit = event => {
-        // alert(`${this.state.league_name} match created`)
-        const body = {
+        var body = {
             "league_name": this.state.league_name,
             "league_format": this.state.league_format,
             "league_logo_link": this.state.league_logo_link
@@ -37,6 +36,9 @@ class AddLeague extends Component {
         axios.post("http://localhost:5000/league_type", body)
         .then(response => {
             alert(`${this.state.league_name} match created`)
+            body["league_type_id"] = response.data.insertId
+            this.props.league_changer(body)
+            console.log(response)
         })
         .catch(error => {
             console.log(error)
@@ -44,7 +46,7 @@ class AddLeague extends Component {
         this.setState({
             modal: false,
             league_name: '',
-            league_format: '',
+            league_format: 'T20',
             league_logo_link: '',
         })
     }

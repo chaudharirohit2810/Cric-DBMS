@@ -1,13 +1,18 @@
 import React, { Component } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Form, FormGroup, Label, Input, Row, Col } from 'reactstrap';
+import axios from 'axios'
 
 class AddPlayerStats extends Component {
 
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
         this.state = {
             modal: false,
+            players: [],
+            league_id: props.imps.league_id,
+            team_id: props.imps.team_id,
             player: '',
+            player_id: 0,
             matches_played: 0,
             runs_scored: 0,
             hundreds: 0,
@@ -26,6 +31,19 @@ class AddPlayerStats extends Component {
         }   
     }
 
+    componentDidMount(props) {
+        axios.get(`http://localhost:5000/players/`)
+        .then(response => {
+            this.setState({
+                players: response.data
+            })
+        })
+        .catch(error => {
+            console.log(error)
+        })
+        console.log(`${this.state.league_id} and for team ${this.state.team_id}` )
+    }
+
     toggle = () => {
         this.setState({
             modal: !this.state.modal,
@@ -39,12 +57,57 @@ class AddPlayerStats extends Component {
         })
     }
 
+    handle1 = event => {
+        this.setState({
+            player : event.target.value,
+            player_id: event.target[event.target.selectedIndex].id
+        })
+    }
+
     handleSubmit = event => {
-        alert(`${this.state.team} rank added`)
+        const body = {
+            "player_id": this.state.player_id,
+            "league_id": this.state.league_id,
+            "matches_played": this.state.matches_played,
+            "runs_scored": this.state.runs_scored,
+            "hundreds": this.state.hundreds,
+            "fifties": this.state.fifties,
+            "high_score": this.state.high_score,
+            "not_outs": this.state.not_outs,
+            "strike_rate": this.state.strike_rate,
+            "overs": this.state.overs,
+            "wickets": this.state.wickets,
+            "economy": this.state.economy,
+            "best_bowling": this.state.best_bowling,
+            "catches": this.state.catches,
+            "run_outs": this.state.runouts,
+            "ducks": this.state.ducks,
+            "outs": this.state.outs
+        }
+        axios.post("http://localhost:5000/player_stats/", body)
+        .then(response => {
+            alert(`Stats added successfully`)
+            this.props.imps.player_adder()
+        })
+        .catch(error => {
+            console.log(error)
+        })
+        axios.post("http://localhost:5000/plays/", {
+            "team_id": this.state.team_id,
+            "player_id": this.state.player_id,
+            "league_id": this.state.league_id
+        })
+        .then(response => {
+            console.log('Plays added successfully')
+        })
+        .catch(error => {
+            console.log(error)
+        })
         this.setState({
             modal: false,
             player: '',
             matches_played: '',
+            player_id: this.state.players[0].player_id,
             runs_scored: '',
             hundreds: '',
             fifties: '',
@@ -62,7 +125,29 @@ class AddPlayerStats extends Component {
         })
     }
 
+    compareObjects(object1, object2, key) {
+        const obj1 = object1[key].toUpperCase()
+        const obj2 = object2[key].toUpperCase()
+      
+        if (obj1 < obj2) {
+          return -1
+        }
+        if (obj1 > obj2) {
+          return 1
+        }
+        return 0
+      }
+
     render() {
+        const {players} = this.state
+
+        players.sort((a, b) => {
+            return this.compareObjects(a, b, 'first_name')
+        })
+
+        const ops = players.map(player =>
+            <option key={player.player_id} id={player.player_id}>{`${player.first_name} ${player.last_name}`}</option>
+        )
   return (
     <div>
         <div style={{"text-align": "right", "margin": "10px", "paddingBlockEnd": "10px"}}>
@@ -75,7 +160,12 @@ class AddPlayerStats extends Component {
                         <FormGroup>
                             <Row>
                                 <Col xs="2"><Label>Player: </Label></Col>
-                                <Col xs="10"><Input type="number" name="player" id="player" value={this.state.player} onChange={this.handle} placeholder="Select player"/></Col>
+                                <Col xs="10"><Input type="select" name="player" id="player" value={this.state.player} onChange={this.handle1} placeholder="Select player">
+                                    <option>Select player</option>
+                                    {
+                                        ops
+                                    }
+                                </Input></Col>
                             </Row>
                         </FormGroup>
                         <FormGroup>

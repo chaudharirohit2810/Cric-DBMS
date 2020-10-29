@@ -8,9 +8,10 @@ class League_Seasons extends Component {
     constructor(props) {
         super()
         this.state = {
-            league_name: props.location.state.league_name,
-            league_type_id: props.match.params.league,
-            seas: [],
+            league_name: props.match.params.league,
+            league_type_id: props.location.state.league_type_id,
+            seas_added: false,
+            seas:[]
         }
     }
 
@@ -23,6 +24,26 @@ class League_Seasons extends Component {
         })
         .catch(error => {
             console.log(error)
+        })
+    }
+
+    componentDidUpdate(PrevProps, PrevState) {
+        if(PrevState.seas_added != this.state.seas_added) {
+            axios.get(`http://localhost:5000/league/${this.state.league_type_id}/`)
+            .then(response => {
+                this.setState({
+                    seas: response.data,
+                })
+            })
+            .catch(error => {
+                console.log(error)
+            })
+        }
+    }
+
+    season_adder = () => {
+        this.setState({
+            seas_added: !this.state.seas_added
         })
     }
 
@@ -61,10 +82,10 @@ class League_Seasons extends Component {
                             <div style ={{"text-align": "center", "marginTop": "15px"}}>
                                 <Link className="btn btn-info" to={
                                     {
-                                        pathname: `${this.props.match.url}/${ses.league_id}`,
+                                        pathname: `${this.props.match.url}/${ses.season}`,
                                         state: {
-                                            league_name: this.state.league_name,
-                                            league_season: ses.season
+                                            league_id: ses.league_id,
+                                            league_type_id: this.state.league_type_id
                                         }
                                     }
                                     }>Details</Link> 
@@ -85,7 +106,7 @@ class League_Seasons extends Component {
                     <div className="titles">{this.state.league_name} Seasons</div>
                 </Col>
                 <Col>
-                <AddSeason league={this.state.league_type_id}/>
+                <AddSeason league={this.state.league_type_id} season_adder={this.season_adder}/>
                 </Col>
                 </Row>
                 <Row>

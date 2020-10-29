@@ -9,7 +9,7 @@ class LeaguePage extends Component {
     constructor() {
         super()
         this.state = {
-            leag : []
+            leag : [],
         }
     }
 
@@ -19,7 +19,6 @@ class LeaguePage extends Component {
             this.setState({
                 leag: response.data
             })
-            console.log(this.state.leag)
         })
         .catch(error => {
             console.log(error)
@@ -27,6 +26,11 @@ class LeaguePage extends Component {
     }
 
 
+    league_adder = (data) => {
+        this.setState({
+            leag: [...this.state.leag, data]
+        })
+    }
 
     render() {
 
@@ -49,9 +53,9 @@ class LeaguePage extends Component {
                             <div style ={{"text-align": "center", "marginTop": "10px"}}>
                                 <Link className="btn btn-info" to={
                                     {
-                                        pathname: `/${lea.league_type_id}`,
+                                        pathname: `/${lea.league_name}`,
                                         state: {
-                                            league_name: lea.league_name
+                                            league_type_id: lea.league_type_id
                                         } 
                                     }    
                                 }>Details</Link> 
@@ -71,7 +75,7 @@ class LeaguePage extends Component {
                 <div className="titles">Popular Leagues</div>
                 </Col>
                 <Col>
-                <AddLeague/>
+                <AddLeague league_changer={this.league_adder}/>
                 </Col>
                 </Row>
                 

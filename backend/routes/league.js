@@ -63,7 +63,7 @@ router.post("/", (req, res) => {
         if (err) {
             return res.status(400).send(err.message);
         }
-        return res.status(200).send("League added successfully");
+        return res.status(200).send(result);
     });
 });
 

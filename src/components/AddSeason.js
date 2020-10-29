@@ -51,7 +51,7 @@ class AddSeason extends Component {
     }
 
     handleSubmit = event => {
-        const body = {
+        var body = {
             "league_type_id": this.state.league_type_id,
             "startdate": this.state.startdate,
             "enddate": this.state.enddate,
@@ -62,12 +62,12 @@ class AddSeason extends Component {
         }
         axios.post("http://localhost:5000/league/", body)
         .then(response => {
-            alert(`Season ${this.state.season} added`)
+            this.props.season_adder()
+            alert(`New Season added`)
         })
         .catch(error => {
             console.log(error)
         })
-        
         this.setState({
             modal: false,
             season: 0,
@@ -105,6 +105,7 @@ class AddSeason extends Component {
         const ops = teams.map(team =>
             <option key={team.team_id} id={team.team_id}>{team.team_name}</option>
         )
+
        
   return (
     <div>
@@ -149,6 +150,7 @@ class AddSeason extends Component {
                             <Row>
                                 <Col xs="2"><Label>Winner: </Label></Col>
                                 <Col xs="10"><Input type="select" name="winner" id="winner" value={this.state.winner} onChange={this.handle1} placeholder="Enter the winner">
+                                <option>Choose winner from dropdown</option>
                                 {
                                   ops  
                                 }

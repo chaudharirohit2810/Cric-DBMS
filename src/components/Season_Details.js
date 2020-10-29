@@ -9,12 +9,13 @@ class Season_Details extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            league_name: props.location.state.league_name,
-            league_type_id: props.match.params.league,
-            league_id: props.match.params.season,
-            season: props.location.state.league_season,
+            league_name: props.match.params.league,
+            league_type_id: props.location.state.league_type_id,
+            league_id: props.location.state.league_id,
+            season: props.match.params.season,
             teams: [],
-            teams_available: []
+            teams_available: [],
+            rank_added: false,
         }
     }
 
@@ -40,6 +41,20 @@ class Season_Details extends Component {
         })
     }
 
+    componentDidUpdate(PrevProps, PrevState) {
+        if(PrevState.rank_added != this.state.rank_added) {
+            axios.get(`http://localhost:5000/team_rankings/${this.state.league_id}`)
+            .then(response => {
+                this.setState({
+                    teams: response.data
+                })
+            })
+            .catch(error => {
+                console.log(error)
+            })
+        }
+    }
+
     compareObjects(object1, object2, key) {
         const obj1 = object1[key].toUpperCase()
         const obj2 = object2[key].toUpperCase()
@@ -53,6 +68,11 @@ class Season_Details extends Component {
         return 0
       }
 
+      rank_adder = () => {
+        this.setState({
+            rank_added: !this.state.rank_added
+        })
+    }
 
     render() {
 
@@ -64,10 +84,21 @@ class Season_Details extends Component {
 
         const teams = this.state.teams.map((team, index) =>
             <tr key={team.team[0].team_id}>
-                <td>{index}</td>
+                <td>{index + 1}</td>
                 <td>{team.team[0].team_name}</td>
                 <td>{team.points}</td>
-                <td><Link className="btn btn-info" to={`${this.props.match.url}/${team.team}`}>Details</Link> </td>
+                <td><Link className="btn btn-info" to={
+                    {
+                        pathname: `${this.props.match.url}/${team.team[0].team_name}`,
+                        state: {
+                            team_id: team.team[0].team_id,
+                            league_id: this.state.league_id,
+                            league_type_id: this.state.league_type_id,
+                            team_logo: team.team[0].logo_link
+                        }
+                    }
+                
+                }>Details</Link> </td>
             </tr>
 
         )
@@ -88,7 +119,7 @@ class Season_Details extends Component {
                             <div className="titles">Team Rankings</div>
                         </Col>
                         <Col>
-                            <AddRanks conts = {{league_id:this.state.league_id ,teams:teams_available}}/>
+                            <AddRanks conts = {{league_id:this.state.league_id ,teams:teams_available, rank_adder: this.rank_adder}}/>
                         </Col>
                     </Row>
                     

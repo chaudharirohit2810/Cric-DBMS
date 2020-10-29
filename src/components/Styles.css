@@ -94,3 +94,16 @@
     margin-left: 10px;
     cursor: pointer
 }
+
+.titleModal {
+    margin: 0 auto;
+    font-size: 23px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.modalfield {
+    margin-top: 5px;
+    font-size: 20px;
+    margin-bottom: 5px;
+    font-family: 'Courier New', Courier, monospace;
+}
