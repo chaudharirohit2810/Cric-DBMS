@@ -51,7 +51,14 @@ class AddMatch extends Component {
     handle3 = event => {
         this.setState({
             winner : event.target.value,
-            wineer_id: event.target[event.target.selectedIndex].id
+            winner_id: event.target[event.target.selectedIndex].id
+        })
+    }
+
+    handle4 = event => {
+        this.setState({
+            league : event.target.value,
+            league_id: event.target[event.target.selectedIndex].id
         })
     }
 
@@ -62,7 +69,7 @@ class AddMatch extends Component {
             "match_date": this.state.date,
             "team1":this.state.team1_id,
             "team2": this.state.team2_id,
-            "winner": this.state.winner_id
+            "won_by": this.state.winner_id
         }
         axios.post("http://localhost:5000/matches", body)
         .then(response => {
@@ -71,6 +78,7 @@ class AddMatch extends Component {
         })
         .catch(error => {
             console.log(error)
+            console.log(body)
         })
         this.setState({
             modal: false,
@@ -88,9 +96,12 @@ class AddMatch extends Component {
     }
 
     render() {
-        const {teams} = this.props
+        const {teams, league} = this.props
         const ops = teams.map(team =>
             <option key={team.team_id} id={team.team_id}>{team.team_name}</option>
+        )
+        const ops1 = league.map(item =>
+            <option key={item.league_id} id={item.league_id}>{`${item.league_name} Season ${item.season}`}</option>
         )
   return (
     <div>
@@ -110,7 +121,12 @@ class AddMatch extends Component {
                         <FormGroup>
                             <Row>
                                 <Col xs="2"><Label>League: </Label></Col>
-                                <Col xs="10"><Input type="name" name="league" id="league" value={this.state.league} onChange={this.handle} placeholder="Enter league name"/></Col>
+                                <Col xs="10"><Input type="select" name="league" id="league" value={this.state.league} onChange={this.handle4} placeholder="Enter league name">
+                                    <option>Choose the league</option>
+                                    {
+                                        ops1
+                                    }
+                                    </Input></Col>
                             </Row>
                         </FormGroup>
                         <FormGroup>

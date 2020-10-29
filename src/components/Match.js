@@ -53,11 +53,12 @@ class Match extends Component {
     }
 
   componentDidMount(props) {
-      axios.get('http://localhost:5000/matches/recent')
+      axios.get('http://localhost:5000/matches')
           .then(response => {
               this.setState({
                   items: response.data
               })
+              console.log(this.state.items)
           })
           .catch(error => {
               console.log(error)
@@ -72,13 +73,23 @@ class Match extends Component {
           .catch(error => {
               console.log(error)
           })
+          axios.get(`http://localhost:5000/league/`)
+          .then(response => {
+              this.setState({
+                  league: response.data 
+              })
+              
+          })
+          .catch(error => {
+              console.log(error)
+          })
 
   }
   
 
   componentDidUpdate(PrevProps, PrevState) {
     if(PrevState.match_added != this.state.match_added) {
-      axios.get('http://localhost:5000/matches/recent')
+      axios.get('http://localhost:5000/matches')
       .then(response => {
           this.setState({
               items: response.data
@@ -115,7 +126,7 @@ class Match extends Component {
 
   match_adder = (data) => {
     this.setState({
-        leag: [...this.state.leag, data]
+        match_added: !this.state.match_added
     })
 }
 
@@ -134,11 +145,15 @@ compareObjects(object1, object2, key) {
 
   render() {
 
-    const { teams } = this.state
+    const { teams, league } = this.state
         
     teams.sort((a, b) => {
         return this.compareObjects(a, b, 'team_name')
     })
+
+    league.sort((a, b) => {
+      return this.compareObjects(a, b, 'league_name')
+  })
 
     const {items} = this.state
     const {activeIndex, animating} = this.state
@@ -151,23 +166,23 @@ compareObjects(object1, object2, key) {
             onExited={() => this.setState({
                 animating: false
             })}
-            key={item.src}
+            key={item.match_id}
           >
             <Container>
                     <div className="match">
                         <Row>
                             <Col xs="1"></Col>
-                            <Col>Match {item.match_no}: {item.league}</Col>
+                            <Col>Match {item.match_number}: </Col>
                             <Col xs="1"></Col>
                         </Row>
                         <Row>
                             <Col xs="1"></Col>
-                            <Col xs="10">{item.Team1} vs {item.Team2}</Col>
+                            <Col xs="10">{item.team1[0].team_name} vs {item.team2[0].team_name}</Col>
                             <Col xs="1"></Col>
                         </Row>
                         <Row>
                           <Col xs="1"></Col>
-                          <Col>{item.Won_by} won the match</Col>
+                          <Col>{item.won_by[0].team_name} won the match</Col>
                           <Col xs="1"></Col>
                         </Row>
                     </div>
@@ -183,7 +198,7 @@ compareObjects(object1, object2, key) {
             <div className="titles">Recent Matches</div>
             </Col>
             <Col>
-              <AddMatch match_adder={this.match_adder} teams={teams}/>
+              <AddMatch match_adder={this.match_adder} teams={teams} league={league}/>
             </Col>
             </Row>
             <Carousel

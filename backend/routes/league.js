@@ -4,6 +4,16 @@ const router = require("express").Router();
 
 const db = mysql.createPool(config.mysql);
 
+router.get("/", (req, res) => {
+    var query = "SELECT League.league_id as league_id, League.season as season, League_Type.league_name as league_name from League join League_Type on League.league_type_id=League_Type.league_type_id;";
+    db.query(query, (err, result) => {
+        if (err) {
+            return res.status(400).send(err.message);
+        }
+        return res.status(200).send(result);
+    });
+});
+
 router.get("/:league_type", async (req, res) => {
     try {
         const league_type = req.params.league_type;
