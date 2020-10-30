@@ -1,99 +1,78 @@
-import React, {Component} from 'react'
-import { Link } from 'react-router-dom'
-import { Col, Container, Row } from 'reactstrap'
-import AddSeason from './AddSeason'
-import axios from 'axios'
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import { Col, Container, Row } from "reactstrap";
+import AddSeason from "./AddSeason";
+import axios from "axios";
+import Card from "./Utils/Season_Card";
 
 class League_Seasons extends Component {
     constructor(props) {
-        super()
+        super();
         this.state = {
             league_name: props.location.state.league_name,
             league_type_id: props.match.params.league,
             seas: [],
-        }
+        };
     }
 
     componentDidMount(props) {
-        axios.get(`http://localhost:5000/league/${this.state.league_type_id}/`)
-        .then(response => {
-            this.setState({
-                seas: response.data
+        axios
+            .get(`http://localhost:5000/league/${this.state.league_type_id}/`)
+            .then((response) => {
+                console.log(response.data);
+                this.setState({
+                    seas: response.data,
+                });
             })
-        })
-        .catch(error => {
-            console.log(error)
-        })
+            .catch((error) => {
+                console.log(error);
+            });
     }
 
     render() {
-
-            const season1 = this.state.seas.map((ses, index) =>
+        const season1 = this.state.seas.map((ses, index) => (
             <React.Fragment key={ses.season}>
-            <Col lg="6" style={{"marginBottom": "10px"}}>
-                <Row>
-                    <Col lg="1"></Col>
-                        <Col lg="10" className="match">
-                            <div style ={{"font-size": "20px", "marginBottom": "10px", "text-align": "center"}}>
-                                Season {ses.season}
-                            </div>
-                            <div style ={{"font-size": "18px", "marginBottom": "10px", "text-align": "center"}}>
-                                {`Winner: ${ses.team[0].team_name}`}
-                            </div>
-                            <Row>
-                                <Col>
-                                    {`Started: ${ses.startdate.slice(0, 10)}`}
-                                </Col>
-                                <Col>
-                                    {`Ended: ${ses.enddate.slice(0, 10)}`}
-                                </Col>
-                            </Row>
-                            <Row>
-                                <Col>
-                                    {`Host: ${ses.country}`}
-                                </Col>
-                                <Col >
-                                    {`Duration: ${ses.duration} days`}
-                                </Col>
-                            </Row>
-                            
-
-                            <div style ={{"text-align": "center", "marginTop": "15px"}}>
-                                <Link className="btn btn-info" to={
-                                    {
-                                        pathname: `${this.props.match.url}/${ses.league_id}`,
-                                        state: {
-                                            league_name: this.state.league_name,
-                                            league_season: ses.season
-                                        }
-                                    }
-                                    }>Details</Link> 
-                            </div>
-
-                        </Col>
-                    <Col lg="1"></Col>
-                </Row>
-            </Col>
-            {/* <Col lg="1"></Col> */}
+                <Card
+                    season={ses.season}
+                    team={ses.team}
+                    startdate={ses.startdate}
+                    enddate={ses.enddate}
+                    country={ses.country}
+                    duration={ses.duration}
+                    league_name={this.state.league_name}
+                    url={this.props.match.url}
+                    league_id={ses.league_id}
+                />
+                {/* <Col lg="1"></Col> */}
             </React.Fragment>
-        )
+        ));
 
-        return(
+        return (
             <Container className="toplookout">
                 <Row>
-                <Col>
-                    <div className="titles">{this.state.league_name} Seasons</div>
-                </Col>
-                <Col>
-                <AddSeason league={this.state.league_type_id}/>
-                </Col>
+                    <Col>
+                        <div className="titles">
+                            {this.state.league_name} Seasons
+                        </div>
+                    </Col>
+                    <Col>
+                        <AddSeason league={this.state.league_type_id} />
+                    </Col>
                 </Row>
                 <Row>
-                    {season1}
+                    <div
+                        style={{
+                            display: "flex",
+                            justifyContent: "center",
+                            flexWrap: "wrap",
+                        }}
+                    >
+                        {season1}
+                    </div>
                 </Row>
             </Container>
-        )
+        );
     }
 }
 
-export default League_Seasons
+export default League_Seasons;

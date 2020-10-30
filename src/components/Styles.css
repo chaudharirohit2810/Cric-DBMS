@@ -6,8 +6,8 @@
 }
 
 .linkclass:hover {
-    color:whitesmoke;
-    font-size: 16px; 
+    color: whitesmoke;
+    font-size: 16px;
 }
 
 .linkclass1 {
@@ -17,8 +17,8 @@
 }
 
 .linkclass1:hover {
-    color:whitesmoke;
-    font-size: 16px; 
+    color: whitesmoke;
+    font-size: 16px;
 }
 
 .profileimage {
@@ -31,10 +31,9 @@
     margin-bottom: 150px;
 }
 
-
 .match {
     background-color: #b5d5df;
-    margin:5px;
+    margin: 5px;
     color: #0c5970;
     margin-bottom: 10px;
     text-align: center;
@@ -47,7 +46,7 @@
 .match:hover {
     background-color: #b5d5df;
     color: #0c5970;
-    margin:5px;
+    margin: 5px;
     margin-bottom: 10px;
     padding: 35px;
     text-align: left;
@@ -75,22 +74,22 @@
 }
 
 .titles {
-    margin-left: 30px;
+    /* margin-left: 30px; */
     font-size: 25px;
     padding: 10px;
-    color:#0c5970
+    color: #0c5970;
 }
 
 .linkss {
     color: whitesmoke;
     font-size: 15px;
     margin-left: 10px;
-    cursor: pointer
+    cursor: pointer;
 }
 
 .linkss:hover {
     color: whitesmoke;
     font-size: 16px;
     margin-left: 10px;
-    cursor: pointer
+    cursor: pointer;
 }
