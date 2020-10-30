@@ -8,11 +8,12 @@ export default function Card(props) {
         <>
             {/* <Col lg="1"></Col> */}
             <div className={Style.league_type}>
-                <div>
+                <div style={{ width: "100%", textAlign: "center" }}>
                     <img
                         src={`${props.link}`}
                         style={{
-                            width: "100%",
+                            width: "200px",
+                            height: "200px",
                         }}
                         alt={`${props.name} logo`}
                     ></img>

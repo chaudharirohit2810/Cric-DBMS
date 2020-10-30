@@ -51,7 +51,6 @@ class LeaguePage extends Component {
                         <AddLeague />
                     </Col>
                 </Row>
-
                 <Row>
                     <div
                         style={{

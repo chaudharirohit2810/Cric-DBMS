@@ -20,7 +20,7 @@ class AddLeague extends Component {
         this.state = {
             modal: false,
             league_name: "",
-            league_format: "",
+            league_format: "T20",
             league_logo_link: "",
         };
     }

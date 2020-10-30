@@ -32,9 +32,10 @@
 }
 
 .match {
-    background-color: #b5d5df;
+    background: rgba(0, 131, 141, 0.2);
     margin: 5px;
     color: #0c5970;
+    font-weight: 700;
     margin-bottom: 10px;
     text-align: center;
     padding: 30px;

@@ -40,11 +40,13 @@
     }
 }
 
-.league_type_details {
+.match_details {
     display: block;
     position: relative;
     width: 100%;
-    background-color: #f2f8f9;
+    background: rgba(0, 131, 141, 0.2);
+    padding: 32px 24px;
+    font-weight: 700;
     text-decoration: none;
     z-index: 0;
     overflow: hidden;
@@ -65,11 +67,11 @@
     }
 
     &:hover:before {
-        transform: scale(21);
+        transform: scale(81);
     }
 }
 
-.league_type_details:hover {
+.match_details:hover {
     transition: all 0.3s ease-out;
     color: #fff;
 
