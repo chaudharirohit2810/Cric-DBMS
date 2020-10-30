@@ -20,7 +20,7 @@ const config = require("../config");
 const db = mysql.createPool(config.mysql);
 
 // Get All Matches
-router.get("/", async (req, res) => {
+router.get("/all", async (req, res) => {
     try {
         var query = "SELECT * FROM Matches;";
         var main = await new Promise((resolve, reject) => {
@@ -85,7 +85,7 @@ router.get("/:league_id", async (req, res) => {
 });
 
 // Get recent 5 matches
-router.get("/recent", async (req, res) => {
+router.get("/", async (req, res) => {
     try {
         var query = "SELECT * from Matches ORDER BY match_date DESC LIMIT 5;";
         var main = await new Promise((resolve, reject) => {

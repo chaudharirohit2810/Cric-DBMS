@@ -13,6 +13,7 @@ class AddRanks extends Component {
             team_id: 0,
             points: 0,
             rank: 0,
+            
         }   
     }
 
@@ -45,6 +46,7 @@ class AddRanks extends Component {
         }
         axios.post("http://localhost:5000/team_rankings/", body)
         .then(response => {
+            this.props.conts.rank_adder()
             alert(`${this.state.team} rank added`)
         })
         .catch(error => {
@@ -58,6 +60,21 @@ class AddRanks extends Component {
             rank: 0
         })
     }
+
+    compareObjects(object1, object2, key) {
+        const obj1 = object1[key].toUpperCase()
+        const obj2 = object2[key].toUpperCase()
+      
+        if (obj1 < obj2) {
+          return -1
+        }
+        if (obj1 > obj2) {
+          return 1
+        }
+        return 0
+      }
+
+    
 
     render() {
         const teams = this.props.conts.teams
@@ -78,6 +95,7 @@ class AddRanks extends Component {
                             <Row>
                                 <Col xs="2"><Label>Team: </Label></Col>
                                 <Col xs="10"><Input type="select" name="team" id="team" value={this.state.team} onChange={this.handle1} placeholder="Enter team name">
+                                    <option>Select Team</option>
                                     {
                                         ops
                                     }

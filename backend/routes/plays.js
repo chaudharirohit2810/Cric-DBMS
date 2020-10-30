@@ -6,9 +6,9 @@ const db = mysql.createPool(config.mysql);
 
 router.post("/", async (req, res) => {
     try {
-        var { player_id, team_id } = req.body;
+        var { player_id, team_id, league_id } = req.body;
         var main = await new Promise((resolve, reject) => {
-            var query = `INSERT INTO Plays VALUES (${team_id}, ${player_id})`;
+            var query = `INSERT INTO Plays VALUES (${team_id}, ${player_id}, ${league_id})`;
             db.query(query, (err, result) => {
                 if (err) {
                     reject(err);

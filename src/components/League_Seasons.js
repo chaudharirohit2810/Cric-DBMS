@@ -9,10 +9,18 @@ class League_Seasons extends Component {
     constructor(props) {
         super();
         this.state = {
+<<<<<<< HEAD
             league_name: props.location.state.league_name,
             league_type_id: props.match.params.league,
             seas: [],
         };
+=======
+            league_name: props.match.params.league,
+            league_type_id: props.location.state.league_type_id,
+            seas_added: false,
+            seas:[]
+        }
+>>>>>>> 256c24dc371ab4933cec2da82098278677c2e152
     }
 
     componentDidMount(props) {
@@ -27,6 +35,26 @@ class League_Seasons extends Component {
             .catch((error) => {
                 console.log(error);
             });
+    }
+
+    componentDidUpdate(PrevProps, PrevState) {
+        if(PrevState.seas_added != this.state.seas_added) {
+            axios.get(`http://localhost:5000/league/${this.state.league_type_id}/`)
+            .then(response => {
+                this.setState({
+                    seas: response.data,
+                })
+            })
+            .catch(error => {
+                console.log(error)
+            })
+        }
+    }
+
+    season_adder = () => {
+        this.setState({
+            seas_added: !this.state.seas_added
+        })
     }
 
     render() {

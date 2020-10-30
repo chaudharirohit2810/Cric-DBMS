@@ -33,7 +33,7 @@ router.post("/", (req, res) => {
         if (err) {
             return res.status(400).send(err.message);
         }
-        return res.status(200).send(`League type added successfully ${req.body}`);
+        return res.status(200).send(result);
     });
 });
 
