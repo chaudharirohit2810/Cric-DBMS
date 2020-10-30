@@ -46,7 +46,6 @@ class PlayerDetails extends Component {
                         stats: response.data[0],
                     });
                 }
-                console.log(this.state.stats);
             })
             .catch((err) => {
                 console.log("Error in retrieving the stats");

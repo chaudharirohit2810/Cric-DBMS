@@ -6,10 +6,10 @@ import Style from "./league_type.module.scss";
 export default function PlayerCard(props) {
     const [player, _] = useState(props.player);
     return (
-        <div className={Style.league_type}>
+        <Col lg = "3" className={Style.league_type}>
             <div style={{ textAlign: "center" }}>
                 <img
-                    src={player[0].image_link}
+                    src={player.image_link}
                     alt="player photo"
                     style={{
                         width: "200px",
@@ -22,17 +22,13 @@ export default function PlayerCard(props) {
                     <div>
                         Name:
                         <span style={{ display: "block", fontWeight: "700" }}>
-                            {player[0].first_name} {player[0].last_name}
+                            {player.first_name} {player.last_name}
                         </span>
                     </div>
                     <div style={{ marginTop: "5px" }}>
                         Role:
                         <span style={{ display: "block" }}>
-                            {player[0].player_role
-                                .split(" ")
-                                [
-                                    player[0].player_role.split(" ").length - 1
-                                ].toUpperCase()}
+                            {player.player_role}
                         </span>
                     </div>
                 </div>
@@ -48,12 +44,12 @@ export default function PlayerCard(props) {
                     }}
                 >
                     <PlayerDetails
-                        name={`${player[0].first_name} ${player[0].last_name}`}
-                        photo={player[0].image_link}
-                        player_id={player[0].player_id}
+                        name={`${player.first_name} ${player.last_name}`}
+                        photo={player.image_link}
+                        player_id={player.player_id}
                     />
                 </div>
             </div>
-        </div>
+        </Col>
     );
 }

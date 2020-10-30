@@ -22,8 +22,11 @@ class TeamDetails extends Component {
     }
 
     componentDidMount(props) {
-        axios
-            .get(`http://localhost:5000/players/${this.state.team_id}`)
+        const body = {
+            team_id: this.state.team_id,
+            league_id: this.state.league_id
+        }
+        axios.get(`http://localhost:5000/plays/`, {params: body})
             .then((response) => {
                 this.setState({
                     players: response.data,
@@ -36,8 +39,12 @@ class TeamDetails extends Component {
 
     componentDidUpdate(PrevProps, PrevState) {
         if (PrevState.player_added != this.state.player_added) {
+            const body = {
+                team_id: this.state.team_id,
+                league_id: this.state.league_id
+            }
             axios
-                .get(`http://localhost:5000/players/${this.state.team_id}`)
+                .get(`http://localhost:5000/plays/`, {params: body})
                 .then((response) => {
                     this.setState({
                         players: response.data,
@@ -57,7 +64,7 @@ class TeamDetails extends Component {
 
     render() {
         const players = this.state.players.map((player, index) => (
-            <React.Fragment key={player[0].player_id}>
+            <React.Fragment key={player.player_id}>
                 <PlayerCard player={player} />
                 {/* <Col lg="1"></Col> */}
             </React.Fragment>
@@ -86,8 +93,8 @@ class TeamDetails extends Component {
                                 lg="8"
                                 style={{ marginTop: "20px", fontWeight: "700" }}
                             >
-                                <div>{`League: ${this.state.league_type_id}`}</div>
-                                <div>{`Season: ${this.state.league_id}`}</div>
+                                <div>{`League: ${this.state.league}`}</div>
+                                <div>{`Season: ${this.state.season}`}</div>
                                 <div>{`Team: ${this.state.team}`}</div>
                             </Col>
                         </Row>

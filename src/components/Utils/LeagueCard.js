@@ -7,7 +7,7 @@ export default function Card(props) {
     return (
         <>
             {/* <Col lg="1"></Col> */}
-            <div className={Style.league_type}>
+            <Col lg="3" className={Style.league_type}>
                 <div style={{ width: "100%", textAlign: "center" }}>
                     <img
                         src={`${lea.league_logo_link}`}
@@ -57,7 +57,7 @@ export default function Card(props) {
                     </Link>
                     {/* </div> */}
                 </div>
-            </div>
+            </Col>
             {/* <Col lg="1"></Col> */}
         </>
     );
