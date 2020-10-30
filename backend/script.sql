@@ -101,7 +101,7 @@ CREATE TABLE Player_Stats
 );
 
 
-CREATE TABLE IF NOT EXIST Plays
+CREATE TABLE IF NOT EXISTS Plays
 (
     team_id INT,
     player_id INT,

@@ -1,8 +1,6 @@
 import React, {Component} from 'react'
 import { Col, Container, Row } from 'reactstrap'
-import AddPlayer from './AddPlayer'
 import AddPlayerStats from './AddPlayerStats'
-import AddRanks from './AddRanks'
 import PlayerDetails from './PlayerDetails'
 
 class TeamDetails extends Component {

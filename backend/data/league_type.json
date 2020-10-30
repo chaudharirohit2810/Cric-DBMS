@@ -1,8 +1,12 @@
 [
     {
-        "league_type_id": 1,
         "league_format": "T20",
         "league_name": "IPL (Indian Premier League)",
-        "league_logo_link": "https://static.wikia.nocookie.net/logopedia/images/f/f7/Dream11_IPL.jpg/revision/latest/scale-to-width-down/220?cb=20200821141513"
-    }
+        "league_logo_link": "https://static.toiimg.com/photo/msid-77659752/77659752.jpg"
+    },
+    {
+        "league_format": "T20",
+        "league_name": "BBL (Big Bash League)",
+        "league_logo_link": "https://upload.wikimedia.org/wikipedia/en/c/c0/Big_Bash_League_%28logo%29.png"
+    }    
 ]

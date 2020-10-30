@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Form, FormGroup, Label, Input, Row, Col } from 'reactstrap';
+import axios from 'axios'
 
 class AddPlayer extends Component {
 
@@ -10,8 +11,9 @@ class AddPlayer extends Component {
             first_name: '',
             last_name: '',
             age: '',
-            start: '',
+            career_start: '',
             role: '',
+            image_link: ''
         }   
     }
 
@@ -29,14 +31,30 @@ class AddPlayer extends Component {
     }
 
     handleSubmit = event => {
-        alert(`${this.state.first_name} ${this.state.last_name} player added`)
+        const body = {
+            "first_name": this.state.first_name,
+            "last_name": this.state.last_name,
+            "age": this.state.age,
+            "career_start": this.state.career_start,
+            "role": this.state.role,
+            "image_link": this.state.image_link,
+        }
+        axios.post("http://localhost:5000/players", body)
+        .then(response => {
+            alert(`${this.state.first_name} ${this.state.last_name} player added`)
+        })
+        .catch(error => {
+            console.log(error)
+        })
+        
         this.setState({
             modal: false,
             first_name: '',
             last_name: '',
             age: '',
-            start: '',
+            career_start: '',
             role: '',
+            image_link: ''
         })
     }
 
@@ -44,7 +62,7 @@ class AddPlayer extends Component {
   return (
     <div>
         <a className="linkss" onClick={this.toggle}>Player</a>
-            <Modal isOpen={this.state.modal} toggle={this.toggle}>
+            <Modal isOpen={this.state.modal} toggle={this.toggle} scrollable="True">
                 <ModalHeader>Add Player</ModalHeader>
                 <ModalBody>
                     <Form>
@@ -69,7 +87,13 @@ class AddPlayer extends Component {
                         <FormGroup>
                             <Row>
                                 <Col xs="2"><Label>Start: </Label></Col>
-                                <Col xs="10"><Input type="date" name="start" id="start" value={this.state.start} onChange={this.handle} placeholder="Enter career start date"/></Col>
+                                <Col xs="10"><Input type="date" name="career_start" id="career_start" value={this.state.career_start} onChange={this.handle} placeholder="Enter career start date"/></Col>
+                            </Row>
+                        </FormGroup>
+                        <FormGroup>
+                            <Row>
+                                <Col xs="2"><Label>Image: </Label></Col>
+                                <Col xs="10"><Input type="name" name="image_link" id="image_link" value={this.state.image_link} onChange={this.handle} placeholder="Paste the link of player image here"/></Col>
                             </Row>
                         </FormGroup>
                         <FormGroup>

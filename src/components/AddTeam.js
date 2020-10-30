@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Form, FormGroup, Label, Input, Row, Col } from 'reactstrap';
+import axios from 'axios'
 
 class AddTeam extends Component {
 
@@ -8,7 +9,7 @@ class AddTeam extends Component {
         this.state = {
             modal: false,
             team_name: '',
-            player: 0
+            logo_link: ''
         }   
     }
 
@@ -26,11 +27,21 @@ class AddTeam extends Component {
     }
 
     handleSubmit = event => {
-        alert(`${this.state.team_name} team created`)
+        const body = {
+            "team_name": this.state.team_name,
+            "logo_link": this.state.logo_link,
+        }
+        axios.post("http://localhost:5000/teams", body)
+        .then(response => {
+            alert(`${this.state.team_name} team added`)
+        })
+        .catch(error => {
+            console.log(error)
+        })
         this.setState({
             modal: false,
             league_name: '',
-            format: '',
+            logo_link: '',
         })
     }
 
@@ -51,8 +62,8 @@ class AddTeam extends Component {
                         </FormGroup>
                         <FormGroup>
                             <Row>
-                                <Col xs="2"><Label>Players </Label></Col>
-                                <Col xs="10"><Input type="numbers" name="player" id="player" value={this.state.player} onChange={this.handle} placeholder="Choose number of players"/>   
+                                <Col xs="2"><Label>Team Logo: </Label></Col>
+                                <Col xs="10"><Input type="name" name="logo_link" id="logo_link" value={this.state.logo_link} onChange={this.handle} placeholder="Paste url of logo"/>   
                                 </Col>
                             </Row>
                         </FormGroup>

@@ -2,74 +2,67 @@ import React, {Component} from 'react'
 import { Col, Row } from 'reactstrap'
 import { Link } from 'react-router-dom'
 import AddLeague from './AddLeague'
+import axios from 'axios'
 
 class LeaguePage extends Component {
 
     constructor() {
         super()
         this.state = {
-            leagues : [
-                {
-                    League_name: "Indian Premier League",
-                    Format: "T20",
-                    Description: "League Played in India"
-                },
-                {
-                    League_name: "Big Bash League",
-                    Format: "T20",
-                    Description: "League Played in Australia"
-                },
-                {
-                    League_name: "Caribbean Premier League",
-                    Format: "T20",
-                    Description: "League Played in Caribbean Islands"
-                },
-                {
-                    League_name: "ODI World Cup",
-                    Format: "ODI",
-                    Description: "League Played All over the world"
-                },
-                {
-                    League_name: "Champions Trophy",
-                    Format: "ODI",
-                    Description: "League Played All over the world"
-                },
-                {
-                    League_name: "T20 World Cup",
-                    Format: "T20",
-                    Description: "League Played all over the world"
-                },
-            ]
+            leag : []
         }
     }
 
-    render() {
-        const leaguess = this.state.leagues.map((lea, index) =>
-                <React.Fragment>
-                <Col lg="6" style={{"marginBottom": "10px"}}>
-                    <Row>
-                        <Col lg="1"></Col>
-                            <Col lg="10" className="match">
-                                <div style ={{"text-align": "center"}}>
-                                    logo
-                                </div>
-                                <div style ={{"text-align": "center"}}>
-                                    {`League Name: ${lea.League_name}`}
-                                </div>
-                                <div style ={{"text-align": "center"}}>
-                                    {`League Format: ${lea.Format}`}
-                                </div>
+    componentDidMount(props) {
+        axios.get('http://localhost:5000/league_type/')
+        .then(response => {
+            this.setState({
+                leag: response.data
+            })
+            console.log(this.state.leag)
+        })
+        .catch(error => {
+            console.log(error)
+        })
+    }
 
-                                <div style ={{"text-align": "center", "marginTop": "10px"}}>
-                                    <Link className="btn btn-info" to={`/${lea.League_name}`}>Details</Link> 
-                                </div>
-                            </Col>
-                        <Col lg="1"></Col>
-                    </Row>
-                </Col>
-                {/* <Col lg="1"></Col> */}
-                </React.Fragment>
-            )
+
+
+    render() {
+
+        const leaguesss = this.state.leag.map((lea, index) =>
+            <React.Fragment>
+            <Col lg="6" style={{"marginBottom": "10px"}}>
+                <Row>
+                    <Col lg="1"></Col>
+                        <Col lg="10" className="match">
+                            <div style ={{"text-align": "center"}}>
+                                <img src={`${lea.league_logo_link}`} style={{"height": "100px", "marginBottom": "10px"}} alt={`${lea.league_name} logo`}></img>
+                            </div>
+                            <div style ={{"text-align": "center"}}>
+                                {`League Name: ${lea.league_name}`}
+                            </div>
+                            <div style ={{"text-align": "center"}}>
+                                {`League Format: ${lea.league_format}`}
+                            </div>
+
+                            <div style ={{"text-align": "center", "marginTop": "10px"}}>
+                                <Link className="btn btn-info" to={
+                                    {
+                                        pathname: `/${lea.league_type_id}`,
+                                        state: {
+                                            league_name: lea.league_name
+                                        } 
+                                    }    
+                                }>Details</Link> 
+                            </div>
+                        </Col>
+                    <Col lg="1"></Col>
+                </Row>
+            </Col>
+            {/* <Col lg="1"></Col> */}
+            </React.Fragment>
+        )
 
         return(
             <React.Fragment>
@@ -83,7 +76,7 @@ class LeaguePage extends Component {
                 </Row>
                 
                 <Row>
-                    {leaguess}
+                    {leaguesss}
                 </Row>
             </React.Fragment>
         )
