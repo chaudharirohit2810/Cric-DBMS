@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import AddLeague from "./AddLeague";
 import axios from "axios";
 import Style from "./Utils/league_type.module.scss";
+import { Edit, Trash } from "react-feather";
 
 class LeaguePage extends Component {
     constructor() {
@@ -13,7 +14,7 @@ class LeaguePage extends Component {
         };
     }
 
-    componentDidMount(props) {
+    fetch_data = () => {
         axios
             .get("http://localhost:5000/league_type/")
             .then((response) => {
@@ -24,6 +25,22 @@ class LeaguePage extends Component {
             .catch((error) => {
                 console.log(error);
             });
+    };
+
+    delete_league_type = (league_id) => {
+        axios
+            .delete(`http://localhost:5000/league_type/${league_id}`)
+            .then((response) => {
+                alert("League type deleted successfully");
+                this.fetch_data();
+            })
+            .catch((err) => {
+                console.error(err);
+            });
+    };
+
+    componentDidMount(props) {
+        this.fetch_data();
     }
 
     league_adder = (data) => {
@@ -49,8 +66,25 @@ class LeaguePage extends Component {
                     <div className={Style.league_type_details}>
                         <div
                             style={{
-                                padding: "32px 24px",
-                                paddingBottom: "16px",
+                                marginTop: "10px",
+                                padding: "5px 24px",
+                            }}
+                        >
+                            <Edit size={20} style={{ cursor: "pointer" }} />
+                            <Trash
+                                size={20}
+                                style={{
+                                    marginLeft: "10px",
+                                    cursor: "pointer",
+                                }}
+                                onClick={() =>
+                                    this.delete_league_type(lea.league_type_id)
+                                }
+                            />
+                        </div>
+                        <div
+                            style={{
+                                padding: "12px 24px 20px",
                             }}
                         >
                             <div>

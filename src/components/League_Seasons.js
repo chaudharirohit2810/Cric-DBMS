@@ -4,6 +4,7 @@ import { Col, Container, Row } from "reactstrap";
 import AddSeason from "./AddSeason";
 import axios from "axios";
 import Style from "./Utils/season.module.scss";
+import { Edit, Trash } from "react-feather";
 
 class League_Seasons extends Component {
     constructor(props) {
@@ -17,6 +18,16 @@ class League_Seasons extends Component {
     }
 
     componentDidMount(props) {
+        this.fetch_seasons();
+    }
+
+    componentDidUpdate(PrevProps, PrevState) {
+        if (PrevState.seas_added != this.state.seas_added) {
+            this.fetch_seasons();
+        }
+    }
+
+    fetch_seasons = () => {
         axios
             .get(`http://localhost:5000/league/${this.state.league_type_id}/`)
             .then((response) => {
@@ -27,24 +38,19 @@ class League_Seasons extends Component {
             .catch((error) => {
                 console.log(error);
             });
-    }
+    };
 
-    componentDidUpdate(PrevProps, PrevState) {
-        if (PrevState.seas_added != this.state.seas_added) {
-            axios
-                .get(
-                    `http://localhost:5000/league/${this.state.league_type_id}/`
-                )
-                .then((response) => {
-                    this.setState({
-                        seas: response.data,
-                    });
-                })
-                .catch((error) => {
-                    console.log(error);
-                });
-        }
-    }
+    delete_season = (id) => {
+        axios
+            .delete(`http://localhost:5000/league/${id}/`)
+            .then((res) => {
+                this.fetch_seasons();
+                alert("League deleted successfully");
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    };
 
     season_adder = () => {
         this.setState({
@@ -66,8 +72,22 @@ class League_Seasons extends Component {
                         >
                             Season {ses.season}
                         </h3>
+
                         <div>
                             <strong>{`Winner: ${ses.team[0].team_name}`}</strong>
+                        </div>
+                        <div style={{ marginTop: "5px", cursor: "pointer" }}>
+                            <Edit size={20} />
+                            <Trash
+                                size={20}
+                                style={{
+                                    marginLeft: "10px",
+                                    cursor: "pointer",
+                                }}
+                                onClick={() =>
+                                    this.delete_season(ses.league_id)
+                                }
+                            />
                         </div>
                         <br></br>
                         <div>{`Started: ${ses.startdate.slice(0, 10)}`}</div>

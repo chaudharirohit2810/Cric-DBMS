@@ -5,7 +5,8 @@ const router = require("express").Router();
 const db = mysql.createPool(config.mysql);
 
 router.get("/", (req, res) => {
-    var query = "SELECT League.league_id as league_id, League.season as season, League_Type.league_name as league_name from League join League_Type on League.league_type_id=League_Type.league_type_id;";
+    var query =
+        "SELECT League.league_id as league_id, League.season as season, League_Type.league_name as league_name from League join League_Type on League.league_type_id=League_Type.league_type_id;";
     db.query(query, (err, result) => {
         if (err) {
             return res.status(400).send(err.message);
@@ -113,6 +114,24 @@ router.post("/multiple", async (req, res) => {
         res.status(200).send("All Leagues added successfully");
     } catch (err) {
         res.status(400).send(err.message);
+    }
+});
+
+router.delete("/:league_id", async (req, res) => {
+    try {
+        var league = req.params.league_id;
+        var query = `DELETE FROM League where league_id = ${league}`;
+        await new Promise((resolve, reject) => {
+            db.query(query, (err, result) => {
+                if (err) {
+                    reject(err);
+                }
+                resolve(result);
+            });
+        });
+        res.status(200).send("Season deleted successfully");
+    } catch (err) {
+        res.status(400).send("Failed to delete season");
     }
 });
 
