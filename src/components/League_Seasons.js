@@ -114,6 +114,7 @@ class League_Seasons extends Component {
                             state: {
                                 league_id: ses.league_id,
                                 league_type_id: this.state.league_type_id,
+                                winner: ses.team[0].team_name
                             },
                         }}
                         style={{ textDecoration: "none" }}

@@ -11,6 +11,7 @@ class Season_Details extends Component {
             league_name: props.match.params.league,
             league_type_id: props.location.state.league_type_id,
             league_id: props.location.state.league_id,
+            winner: props.location.state.winner,
             season: props.match.params.season,
             teams: [],
             teams_available: [],
@@ -131,6 +132,9 @@ class Season_Details extends Component {
                             <div
                                 style={{ fontWeight: "700" }}
                             >{`Season: ${this.state.season}`}</div>
+                            <div
+                                style={{ fontWeight: "700" }}
+                            >{`Winner: ${this.state.winner}`}</div>
                         </div>
                     </div>
                     <Row>
