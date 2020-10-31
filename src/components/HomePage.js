@@ -1,18 +1,17 @@
-import React, { Component } from "react";
-import { Container } from "reactstrap";
-import LeaguePage from "./LeaguePage";
-import Match from "./Match";
+import React, {Component} from 'react'
+import {Container} from 'reactstrap'
+import LeaguePage from './LeaguePage'
+import Match from './Match'
 
 class HomePage extends Component {
-    render() {
-        return (
+    render(){
+        return(
             <Container className="toplookout">
                 <Match />
-                <hr></hr>
                 <LeaguePage />
             </Container>
-        );
+        )
     }
 }
 
-export default HomePage;
+export default HomePage

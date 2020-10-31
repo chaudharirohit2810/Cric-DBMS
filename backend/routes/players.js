@@ -52,43 +52,6 @@ router.post("/", async (req, res) => {
     }
 });
 
-router.post("/multiple", async (req, res) => {
-    const { data } = req.body;
-    try {
-        await Promise.all(
-            data.map(async (item) => {
-                await new Promise((resolve, reject) => {
-                    var {
-                        first_name,
-                        last_name,
-                        age,
-                        career_start,
-                        role,
-                        image_link,
-                    } = item;
-
-                    career_start = career_start || "1900-01-01";
-                    role = role || "";
-                    age = age || 0;
-                    var query = `INSERT INTO Players (first_name, last_name, age, career_start, player_role, image_link) \
-                VALUES ("${first_name}", "${last_name}", ${age}, "${career_start}", "${role}", "${image_link}")`;
-
-                    db.query(query, (err, result) => {
-                        if (err) {
-                            reject(err);
-                        } else {
-                            resolve(result);
-                        }
-                    });
-                });
-            })
-        );
-        res.status(200).send("Multiple players added successfully");
-    } catch (err) {
-        res.status(400).send(err.message);
-    }
-});
-
 // Get players according to player_role
 router.get("/role/:role", async (req, res) => {
     try {
