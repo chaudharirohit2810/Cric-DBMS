@@ -1,68 +1,42 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# CricStats
 
-## Available Scripts
 
-In the project directory, you can run:
 
-### `npm start`
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Team
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+- Chetas Borse      111803045
+- Rohit Chaudhari   111803046
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## Project Statement
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+CricStats is an application to store, retrieve and display the cricket stats. In this application, user can view and analyze statistics of a particular player or team from any league.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## ER Diagram
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+<p align="center">
+  <img width="900" height="500" src="https://github.com/chaudharirohit2810/Cric-DBMS/blob/main/Screenshots/ER_Diagram.jpg">
+</p>
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Steps To Run:
 
-## Learn More
+1. Clone the project.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+2. In the backend as well as parent directory run ```npm install```.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+3. Create Database **cricket** with the tables as mentioned in [script.sql](https://github.com/chaudharirohit2810/Cric-DBMS/blob/main/backend/script.sql). For data you can use [data](https://github.com/chaudharirohit2810/Cric-DBMS/tree/main/backend/data).
 
-### Code Splitting
+4. Paste your mysql configuration in the ```backend/config``` file.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+5. Run command ```npm run app``` to run the application.
 
-### Analyzing the Bundle Size
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
 
-### Making a Progressive Web App
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
 
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
