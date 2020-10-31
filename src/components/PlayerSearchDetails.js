@@ -10,7 +10,7 @@ import {
 } from "reactstrap";
 import axios from "axios";
 
-class PlayerDetails extends Component {
+class PlayerSearchDetails extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -18,7 +18,6 @@ class PlayerDetails extends Component {
             name: props.name,
             image_link: props.photo,
             player_id: props.player_id,
-            league_id: props.league_id,
             hundreds: props.hundreds,
             fifties: props.fifties,
             matches: props.matches,
@@ -36,15 +35,10 @@ class PlayerDetails extends Component {
     signal = axios.CancelToken.source();
 
     componentDidMount(props) {
-        const url = `http://localhost:5000/player_stats/`;
-        const params = {
-            league_id: this.state.league_id,
-            player_id: this.state.player_id
-        }
+        const url = `http://localhost:5000/player_stats/${this.state.player_id}`;
         axios
             .get(url, {
                 cancelToken: this.signal.token,
-                params: params
             })
             .then((response) => {
                 if (response.data[0]) {
@@ -160,4 +154,4 @@ class PlayerDetails extends Component {
     }
 }
 
-export default PlayerDetails;
+export default PlayerSearchDetails;

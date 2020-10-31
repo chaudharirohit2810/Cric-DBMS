@@ -65,7 +65,7 @@ class TeamDetails extends Component {
     render() {
         const players = this.state.players.map((player, index) => (
             <React.Fragment key={player.player_id}>
-                <PlayerCard player={player} />
+                <PlayerCard player={player} league_id={this.state.league_id}/>
                 {/* <Col lg="1"></Col> */}
             </React.Fragment>
         ));
