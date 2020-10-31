@@ -86,62 +86,67 @@ class PlayerSearchDetails extends Component {
                     ) : null}
 
                     <ModalBody>
-                        <div style={{ "text-align": "center" }}>
-                            Matches: {stats.matches_played}
-                        </div>
-                        <div className="modalfield">Batting Stats</div>
-                        <Row>
-                            <Col lg="3">Runs:</Col>
-                            <Col lg="2">{stats.runs_scored}</Col>
-                            <Col lg="1"></Col>
-                            <Col lg="3">High Score: </Col>
-                            <Col lg="2">{stats.high_score}</Col>
-                        </Row>
-                        <Row>
-                            <Col lg="3">Hundreds:</Col>
-                            <Col lg="2">{stats.hundreds}</Col>
-                            <Col lg="1"></Col>
-                            <Col lg="3">Fifties: </Col>
-                            <Col lg="2">{stats.fifties}</Col>
-                        </Row>
-                        <Row>
-                            <Col lg="3">Not Outs:</Col>
-                            <Col lg="2">{stats.not_outs}</Col>
-                            <Col lg="1"></Col>
-                            <Col lg="3">Strike rate:</Col>
-                            <Col lg="2">{stats.strike_rate}</Col>
-                        </Row>
-                        <Row style={{ marginBottom: "20px" }}>
-                            <Col lg="3">Ducks:</Col>
-                            <Col lg="2">{stats.ducks}</Col>
+                        {
+                            this.state.matches ?
+                            <React.Fragment>
+                            <div style={{ "text-align": "center" }}>
+                                Matches: {stats.matches_played}
+                            </div>
+                            <div className="modalfield">Batting Stats</div>
+                            <Row>
+                                <Col lg="3">Runs:</Col>
+                                <Col lg="2">{stats.runs_scored}</Col>
+                                <Col lg="1"></Col>
+                                <Col lg="3">High Score: </Col>
+                                <Col lg="2">{stats.high_score}</Col>
+                            </Row>
+                            <Row>
+                                <Col lg="3">Hundreds:</Col>
+                                <Col lg="2">{stats.hundreds}</Col>
+                                <Col lg="1"></Col>
+                                <Col lg="3">Fifties: </Col>
+                                <Col lg="2">{stats.fifties}</Col>
+                            </Row>
+                            <Row>
+                                <Col lg="3">Not Outs:</Col>
+                                <Col lg="2">{stats.not_outs}</Col>
+                                <Col lg="1"></Col>
+                                <Col lg="3">Strike rate:</Col>
+                                <Col lg="2">{stats.strike_rate}</Col>
+                            </Row>
+                            <Row style={{ marginBottom: "20px" }}>
+                                <Col lg="3">Ducks:</Col>
+                                <Col lg="2">{stats.ducks}</Col>
 
-                            <Col lg="1"></Col>
-                            <Col lg="3">Outs:</Col>
-                            <Col lg="2">{stats.outs}</Col>
-                        </Row>
-                        <div className="modalfield">Bowling Stats</div>
-                        <Row>
-                            <Col lg="3">Overs:</Col>
-                            <Col lg="2">{stats.overs}</Col>
-                            <Col lg="1"></Col>
-                            <Col lg="3">Wickets: </Col>
-                            <Col lg="2">{stats.wickets}</Col>
-                        </Row>
-                        <Row style={{ marginBottom: "20px" }}>
-                            <Col lg="3">Economy:</Col>
-                            <Col lg="2">{stats.economy}</Col>
-                            <Col lg="1"></Col>
-                            <Col lg="3">Best:</Col>
-                            <Col lg="2">{stats.best_bowling}</Col>
-                        </Row>
-                        <div className="modalfield">Fielding Stats</div>
-                        <Row style={{ marginBottom: "20px" }}>
-                            <Col lg="3">Catches:</Col>
-                            <Col lg="2">{stats.catches}</Col>
-                            <Col lg="1"></Col>
-                            <Col lg="3">Runouts:</Col>
-                            <Col lg="2">{stats.run_outs}</Col>
-                        </Row>
+                                <Col lg="1"></Col>
+                                <Col lg="3">Outs:</Col>
+                                <Col lg="2">{stats.outs}</Col>
+                            </Row>
+                            <div className="modalfield">Bowling Stats</div>
+                            <Row>
+                                <Col lg="3">Overs:</Col>
+                                <Col lg="2">{stats.overs}</Col>
+                                <Col lg="1"></Col>
+                                <Col lg="3">Wickets: </Col>
+                                <Col lg="2">{stats.wickets}</Col>
+                            </Row>
+                            <Row style={{ marginBottom: "20px" }}>
+                                <Col lg="3">Economy:</Col>
+                                <Col lg="2">{stats.economy}</Col>
+                                <Col lg="1"></Col>
+                                <Col lg="3">Best:</Col>
+                                <Col lg="2">{stats.best_bowling}</Col>
+                            </Row>
+                            <div className="modalfield">Fielding Stats</div>
+                            <Row style={{ marginBottom: "20px" }}>
+                                <Col lg="3">Catches:</Col>
+                                <Col lg="2">{stats.catches}</Col>
+                                <Col lg="1"></Col>
+                                <Col lg="3">Runouts:</Col>
+                                <Col lg="2">{stats.run_outs}</Col>
+                            </Row>
+                            </React.Fragment> : <div style={{textAlign: "center"}}>No stats yet</div>
+                        }
                     </ModalBody>
                     <ModalFooter>
                         <Button color="danger" onClick={this.toggle}>

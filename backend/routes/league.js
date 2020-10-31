@@ -15,6 +15,18 @@ router.get("/", (req, res) => {
     });
 });
 
+router.get("/league_seasons/:team_id", (req, res) => {
+    const team_id = req.params.team_id
+    var query = `select League_Type.league_type_id as league_type_id, League_Type.league_name as league_name, League_Type.league_format as league_format, tab.team_id as team_id, tab.league_id as league_id, tab.ranks as ranks, tab.points as points, tab.season
+    as season from League_Type join (select Team_Rankings.team_id as team_id, Team_Rankings.league_id as league_id, Team_Rankings.ranks as ranks, Team_Rankings.points as points, League.season as season, League.league_type_id as league_type_id from Team_Rankings join League on Team_Rankings.league_id = League.league_id) tab on tab.league_type_id = League_Type.league_type_id where team_id = ${team_id};`
+    db.query(query, (err, result) => {
+        if (err) {
+            return res.status(400).send(err.message);
+        }
+        return res.status(200).send(result);
+    });
+});
+
 router.get("/:league_type", async (req, res) => {
     try {
         const league_type = req.params.league_type;

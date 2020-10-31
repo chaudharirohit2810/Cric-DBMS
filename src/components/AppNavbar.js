@@ -17,6 +17,7 @@ import Season_Details from './Season_Details';
 import AddPlayer from './AddPlayer';
 import AddTeam from './AddTeam';
 import TeamDetails from './TeamDetails';
+import Team_Seasons from './Team_Seasons';
 
 class AppNavbar extends Component {
 
@@ -59,7 +60,8 @@ class AppNavbar extends Component {
                     </Container>
                 </Navbar>
                 <Switch>  
-                    <Route path="/Search" component={Search}/>  
+                    <Route path="/Search" exact component={Search}/>
+                    <Route path="/Search/:team_name" component={Team_Seasons}/>  
                     <Route path="/" exact component={HomePage}/>
                     <Route path="/:league" exact component={League_Seasons}/>
                     <Route path={`/:league/:season`} exact component={Season_Details}/>
