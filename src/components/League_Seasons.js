@@ -5,6 +5,7 @@ import AddSeason from "./AddSeason";
 import axios from "axios";
 import Style from "./Utils/season.module.scss";
 import { Edit, Trash } from "react-feather";
+import UpdateSeason from "./UpdateSeason";
 
 class League_Seasons extends Component {
     constructor(props) {
@@ -76,11 +77,21 @@ class League_Seasons extends Component {
                         <div>
                             <strong>{`Winner: ${ses.team[0].team_name}`}</strong>
                         </div>
-                        <div style={{ marginTop: "5px", cursor: "pointer" }}>
-                            <Edit size={20} />
+                        <div
+                            style={{
+                                marginTop: "5px",
+                                cursor: "pointer",
+                                display: "flex",
+                            }}
+                        >
+                            <UpdateSeason
+                                league={ses}
+                                fetch_seasons={this.fetch_seasons}
+                            />
                             <Trash
                                 size={20}
                                 style={{
+                                    marginTop: "3px",
                                     marginLeft: "10px",
                                     cursor: "pointer",
                                 }}

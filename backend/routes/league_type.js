@@ -48,4 +48,26 @@ router.delete("/:league_type_id", (req, res) => {
     });
 });
 
+router.put("/:league_type_id", async (req, res) => {
+    try {
+        const league_type_id = req.params.league_type_id;
+        const { league_format, league_name, league_logo_link } = req.body;
+        var query = `UPDATE League_Type SET 
+    league_format="${league_format}", league_name="${league_name}", league_logo_link="${league_logo_link}" 
+    WHERE league_type_id = ${league_type_id};`;
+        await new Promise((resolve, reject) => {
+            db.query(query, (err, result) => {
+                if (err) {
+                    reject(err);
+                }
+                resolve(result);
+            });
+        });
+        res.status(200).send("League updated successfully");
+    } catch (err) {
+        console.log(err);
+        res.status(400).send(err);
+    }
+});
+
 module.exports = router;

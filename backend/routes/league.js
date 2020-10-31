@@ -78,6 +78,42 @@ router.post("/", (req, res) => {
     });
 });
 
+router.put("/:league_id", async (req, res) => {
+    try {
+        const {
+            league_type_id,
+            startdate,
+            enddate,
+            number_of_teams,
+            country,
+            season,
+            winner,
+        } = req.body;
+        const league_id = req.params.league_id;
+        const oneDay = 24 * 60 * 60 * 1000;
+        const duration = Math.round(
+            Math.abs((new Date(startdate) - new Date(enddate)) / oneDay)
+        );
+        var query = `UPDATE League SET 
+        league_type_id = ${league_type_id}, startdate="${startdate}", enddate="${enddate}", duration=${duration},
+         number_of_teams=${number_of_teams}, country="${country}", season=${season}, 
+         winner=${winner} WHERE league_id = ${league_id};`;
+
+        await new Promise((resolve, reject) => {
+            db.query(query, (err, result) => {
+                if (err) {
+                    reject(err);
+                }
+                resolve(result);
+            });
+        });
+        res.status(200).send("League updated successfully");
+    } catch (error) {
+        console.log(error);
+        res.status(400).send(error.message);
+    }
+});
+
 router.post("/multiple", async (req, res) => {
     const { data } = req.body;
     try {

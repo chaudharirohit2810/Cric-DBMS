@@ -5,6 +5,7 @@ import AddLeague from "./AddLeague";
 import axios from "axios";
 import Style from "./Utils/league_type.module.scss";
 import { Edit, Trash } from "react-feather";
+import UpdateLeague from "./UpdateLeague";
 
 class LeaguePage extends Component {
     constructor() {
@@ -68,12 +69,17 @@ class LeaguePage extends Component {
                             style={{
                                 marginTop: "10px",
                                 padding: "5px 24px",
+                                display: "flex",
                             }}
                         >
-                            <Edit size={20} style={{ cursor: "pointer" }} />
+                            <UpdateLeague
+                                fetch_leagues={this.fetch_data}
+                                league={lea}
+                            />
                             <Trash
                                 size={20}
                                 style={{
+                                    marginTop: "3px",
                                     marginLeft: "10px",
                                     cursor: "pointer",
                                 }}
