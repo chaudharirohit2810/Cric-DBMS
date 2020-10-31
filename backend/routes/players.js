@@ -23,10 +23,31 @@ router.get("/", async (req, res) => {
     }
 });
 
+// router.get("/find", async (req, res) => {
+//     try {
+//         var {name} = req.query
+//         var sear = `select Player_Stats.matches_played as matches_played, Player_Stats.runs_scored as runs_scored, Player_Stats.hundreds as hundreds, Player_Stats.fifties as fifties, Player_Stats.high_score as high_score, Player_Stats.not_outs as not_outs, Player_Stats.strike_rate as strike_rate, Player_Stats.overs as overs, Player_Stats.wickets as wickets, Player_Stats.economy as economy, Player_Stats.best_bowling as best_bowling, Player_Stats.catches as catches, Player_Stats.run_outs as run_outs, Player_Stats.ducks as ducks, Player_Stats.outs as outs, player.first_name as first_name, player.last_name as last_name, player.age as age, player.player_role as player_role, player.image_link as image_link from Player_Stats join (select Players.first_name as first_name, Players.last_name as last_name, Players.age as age, Players.player_role as player_role, Players.image_link as image_link, Plays.team_id as team_id, Plays.player_id as player_id, Plays.league_id as league_id from Plays join Players on Players.player_id = Plays.player_id) player on player.player_id = Player_Stats.player_id and player.league_id = Player_Stats.league_id where concat(first_name, " ", last_name) like "%${name}%";`
+//         // var sear = `select sum(Player_Stats.matches_played) as matches_played, sum(Player_Stats.runs_scored) as runs_scored, sum(Player_Stats.hundreds) as hundreds, sum(Player_Stats.fifties) as fifties, avg(Player_Stats.high_score) as high_score, sum(Player_Stats.not_outs) as not_outs, avg(Player_Stats.strike_rate) as strike_rate, sum(Player_Stats.overs) as overs, sum(Player_Stats.wickets) as wickets, avg(Player_Stats.economy) as economy, sum(Player_Stats.catches as catches), sum(Player_Stats.run_outs) as run_outs, sum(Player_Stats.ducks) as ducks, sum(Player_Stats.outs) as outs, player.first_name as first_name, player.last_name as last_name, player.age as age, player.player_role as player_role, player.image_link as image_link from Player_Stats join (select Players.first_name as first_name, Players.last_name as last_name, Players.age as age, Players.player_role as player_role, Players.image_link as image_link, Plays.team_id as team_id, Plays.player_id as player_id, Plays.league_id as league_id from Plays join Players on Players.player_id = Plays.player_id) player on player.player_id = Player_Stats.player_id and player.league_id = Player_Stats.league_id where concat(first_name, " ", last_name) like "%${name}%" group_by player_id;`
+//         var main = await new Promise((resolve, reject) => {
+//             const query = sear;
+//             db.query(query, (err, result) => {
+//                 if (err) {
+//                     reject(err);
+//                 } else {
+//                     resolve(result);
+//                 }
+//             });
+//         });
+//         res.status(200).send(main);
+//     } catch (err) {
+//         res.status(400).send(err.message);
+//     }
+// });
+
 router.get("/find", async (req, res) => {
     try {
         var {name} = req.query
-        var sear = `select Player_Stats.matches_played as matches_played, Player_Stats.runs_scored as runs_scored, Player_Stats.hundreds as hundreds, Player_Stats.fifties as fifties, Player_Stats.high_score as high_score, Player_Stats.not_outs as not_outs, Player_Stats.strike_rate as strike_rate, Player_Stats.overs as overs, Player_Stats.wickets as wickets, Player_Stats.economy as economy, Player_Stats.best_bowling as best_bowling, Player_Stats.catches as catches, Player_Stats.run_outs as run_outs, Player_Stats.ducks as ducks, Player_Stats.outs as outs, player.first_name as first_name, player.last_name as last_name, player.age as age, player.player_role as player_role, player.image_link as image_link from Player_Stats join (select Players.first_name as first_name, Players.last_name as last_name, Players.age as age, Players.player_role as player_role, Players.image_link as image_link, Plays.team_id as team_id, Plays.player_id as player_id, Plays.league_id as league_id from Plays join Players on Players.player_id = Plays.player_id) player on player.player_id = Player_Stats.player_id and player.league_id = Player_Stats.league_id where concat(first_name, " ", last_name) like "%${name}%";`
+        var sear = `select * from Players where concat(first_name, " ", last_name) like "%${name}%";`
         var main = await new Promise((resolve, reject) => {
             const query = sear;
             db.query(query, (err, result) => {

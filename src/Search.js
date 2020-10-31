@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import { Button, Col, Container, Form, FormGroup, Input, Row } from 'reactstrap'
 import axios from 'axios'
+import PlayerCard1 from './components/Utils/PlayerCard1'
 
 class Search extends Component {
     constructor(props) {
@@ -15,17 +16,17 @@ class Search extends Component {
         }
     }
 
-    componentDidMount() {
-        axios.get(`http://localhost:5000/players/find`)
-        .then((response) => {
-            this.setState({
-                players: response.data
-            })
-        })
-        .catch((error) => {
-            console.log(error)
-        })
-    }
+    // componentDidMount() {
+    //     axios.get(`http://localhost:5000/players/find`)
+    //     .then((response) => {
+    //         this.setState({
+    //             players: response.data
+    //         })
+    //     })
+    //     .catch((error) => {
+    //         console.log(error)
+    //     })
+    // }
 
     componentDidUpdate(prevProps, prevState) {
         
@@ -47,9 +48,16 @@ class Search extends Component {
 
     render() {
         const {players} = this.state
-        const players_info = players.map(player => (
-            <div>{player.first_name} {player.last_name}</div>
-        ))
+
+        const players_info = players.map((player, index) => (
+            <React.Fragment key={player.player_id}>
+                <PlayerCard1 player={player} />
+                {/* <Col lg="1"></Col> */}
+            </React.Fragment>
+        ));
+
+
+
         return(
             <Container className="toplookout">
                 <Form>
@@ -65,11 +73,11 @@ class Search extends Component {
                         </Row>
                     </FormGroup>
                 </Form>
-                <div style={{"marginTop": "30px"}}>
+                <Row style={{"marginTop": "30px"}}>
                     {
                         players_info
                     }
-                </div>
+                </Row>
                 
             </Container>
         )
