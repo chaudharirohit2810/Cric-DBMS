@@ -14,6 +14,17 @@ router.get("/", (req, res) => {
     });
 });
 
+router.get("/find", (req, res) => {
+    var name = req.query.name
+    var query = `SELECT * from Teams where team_name like "%${name}%"`;
+    db.query(query, (err, result) => {
+        if (err) {
+            return res.status(400).send("Failed to fetch teams");
+        }
+        return res.status(200).send(result);
+    });
+});
+
 // Get teams for particular player
 router.get("/player/:player_id", async (req, res) => {
     try {
