@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^7.2.1",
     "axios": "^0.21.0",
     "bootstrap": "^4.5.3",
+    "concurrently": "^5.3.0",
     "node-sass": "^4.14.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
@@ -21,7 +22,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "server": "nodemon index.js --prefix backend",
+    "app": "concurrently \"npm run server\" \"npm start\""
   },
   "eslintConfig": {
     "extends": "react-app"
