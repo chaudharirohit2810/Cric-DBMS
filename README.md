@@ -23,6 +23,36 @@ CricStats is an application to store, retrieve and display the cricket stats. In
 </p>
 
 
+## Screenshots
+
+
+<p align="center">
+  <img width="900" height="500" src="https://github.com/chetasborse/CricStats/blob/main/Screenshots/Teams.png">
+</p>
+
+<p align="center">
+  <img width="900" height="500" src="https://github.com/chetasborse/CricStats/blob/main/Screenshots/Player.png">
+</p>
+
+<p align="center">
+  <img width="900" height="500" src="https://github.com/chetasborse/CricStats/blob/main/Screenshots/Seasons.png">
+</p>
+
+
+<p align="center">
+  <img width="900" height="500" src="https://github.com/chetasborse/CricStats/blob/main/Screenshots/Rankings.png">
+</p>
+
+<p align="center">
+  <img width="900" height="500" src="https://github.com/chetasborse/CricStats/blob/main/Screenshots/Search.png">
+</p>
+
+<p align="center">
+  <img width="900" height="500" src="https://github.com/chetasborse/CricStats/blob/main/Screenshots/Leagues.png">
+</p>
+
+
+Check [form images](https://github.com/chetasborse/CricStats/tree/main/Screenshots/FormEntries)
 
 ## Steps To Run:
 
@@ -35,8 +65,3 @@ CricStats is an application to store, retrieve and display the cricket stats. In
 4. Paste your mysql configuration in the ```backend/config``` file.
 
 5. Run command ```npm run app``` to run the application.
-
-
-
-
-
