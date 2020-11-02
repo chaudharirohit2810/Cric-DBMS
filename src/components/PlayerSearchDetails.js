@@ -45,6 +45,7 @@ class PlayerSearchDetails extends Component {
                     this.setState({
                         stats: response.data[0],
                     });
+                    console.log(response)
                 }
             })
             .catch((err) => {
@@ -87,7 +88,7 @@ class PlayerSearchDetails extends Component {
 
                     <ModalBody>
                         {
-                            this.state.matches ?
+                            this.state.stats.matches_played ?
                             <React.Fragment>
                             <div style={{ "text-align": "center" }}>
                                 Matches: {stats.matches_played}
